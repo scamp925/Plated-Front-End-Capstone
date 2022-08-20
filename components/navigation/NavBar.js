@@ -2,10 +2,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { signOut } from '../../utils/auth';
+import Sidebar from './Sidebar';
 
 export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+      <Sidebar />
       <div className="container-fluid">
         <Link passHref href="/">
           <a className="navbar-brand" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
