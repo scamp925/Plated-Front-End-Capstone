@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Link from 'next/link';
+import { signOut } from '../../utils/auth';
 
 function Sidebar() {
   const [show, setShow] = useState(false);
@@ -10,17 +12,35 @@ function Sidebar() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch
+      <Button variant="outline-secondary" onClick={handleShow}>
+        <span className="navbar-toggler-icon" />
       </Button>
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Plated</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          <ul className="navbar-nav me-auto">
+            <li className="nav-item">
+              <Link passHref href="/">
+                Recipes
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link passHref href="/">
+                Add a Recipe
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link passHref href="/" onClick={signOut}>
+                Logout
+              </Link>
+            </li>
+            <button type="button" className="btn btn-danger" onClick={signOut}>
+              Sign Out
+            </button>
+          </ul>
         </Offcanvas.Body>
       </Offcanvas>
     </>
