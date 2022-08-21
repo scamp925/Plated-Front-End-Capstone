@@ -33,7 +33,7 @@ function Sidebar() {
             </li>
             <li className="nav-item">
               <Link passHref href="/recipes/new">
-                Add a Recipe
+                Add Recipe
               </Link>
             </li>
             <li className="nav-item">
