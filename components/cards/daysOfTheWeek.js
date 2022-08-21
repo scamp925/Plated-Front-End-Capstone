@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-function daysOfTheWeek({ dayObj }) {
+function DaysOfTheWeek({ dayObj }) {
   return (
     <div>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title>{dayObj.name}</Card.Title>
+          <Card.Title>{dayObj.day}</Card.Title>
         </Card.Body>
         <footer>
           <Card.Link href="/dinners/new">
@@ -20,15 +20,15 @@ function daysOfTheWeek({ dayObj }) {
   );
 }
 
-daysOfTheWeek.propTypes = {
+DaysOfTheWeek.propTypes = {
   dayObj: PropTypes.shape({
     day: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };
 
-daysOfTheWeek.defaultProps = {
+DaysOfTheWeek.defaultProps = {
   dayObj: {},
 };
 
-export default daysOfTheWeek;
+export default DaysOfTheWeek;
