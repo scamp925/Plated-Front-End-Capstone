@@ -1,24 +1,26 @@
-import { signOut } from '../utils/auth';
-import { useAuth } from '../utils/context/authContext';
+import { useEffect, useState } from 'react';
+import { getDaysOfTheWeek } from '../api/daysOfTheWeekData';
+import DaysOfTheWeek from '../components/cards/daysOfTheWeek';
 
 function Home() {
-  const { user } = useAuth();
+  const [days, setDays] = useState([]);
+
+  const getSunThruSat = () => {
+    getDaysOfTheWeek().then(setDays);
+  };
+
+  useEffect(() => {
+    getSunThruSat();
+  }, []);
 
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      <h1>Hello {user.displayName}! </h1>
-      <p>Click the button below to logout!</p>
-      <button className="btn btn-danger btn-lg copy-btn" type="button" onClick={signOut}>
-        Sign Out
-      </button>
+    <div>
+      <h2>Dinners This Week</h2>
+      <div className="days-container">
+        {days?.map((day) => (
+          <DaysOfTheWeek key={day.firebaseKey} dayObj={day} />
+        ))}
+      </div>
     </div>
   );
 }
