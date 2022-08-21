@@ -18,17 +18,21 @@ function Sidebar() {
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Plated</Offcanvas.Title>
+          <Offcanvas.Title>
+            <Link passHref href="/">
+              Plated
+            </Link>
+          </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <Link passHref href="/">
+              <Link passHref href="/recipes/recipes">
                 Recipes
               </Link>
             </li>
             <li className="nav-item">
-              <Link passHref href="/">
+              <Link passHref href="/recipes/new">
                 Add a Recipe
               </Link>
             </li>
