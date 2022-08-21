@@ -10,7 +10,7 @@ export default function NavBar() {
         <Sidebar />
         <Link passHref href="/">
           <a className="navbar-brand" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
-            Plated
+            <h1>Plated</h1>
           </a>
         </Link>
       </div>
