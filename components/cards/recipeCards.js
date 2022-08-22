@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 
-function recipeCards({ recipeObj }) {
+function RecipeCards({ recipeObj }) {
   return (
     <div>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>{recipeObj.name}</Card.Title>
-          <Card.Text>{recipeObj.totalTime}</Card.Text>
-          <Card.Text>{recipeObj.leftovers}</Card.Text>
-          <Card.Text>{recipeObj.preheat}</Card.Text>
+          <Card.Text>Total Time: {recipeObj.totalTime}</Card.Text>
+          <Card.Text>{recipeObj.leftovers === true ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
+          <Card.Text>{recipeObj.preheat && 'Preheat Oven To:'} {recipeObj.preheat}</Card.Text>
           <Card.Link href={`/recipes/${recipeObj.firebaseKey}`} passHref>View Details</Card.Link>
         </Card.Body>
       </Card>
@@ -18,7 +18,7 @@ function recipeCards({ recipeObj }) {
   );
 }
 
-recipeCards.propTypes = {
+RecipeCards.propTypes = {
   recipeObj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     name: PropTypes.string,
@@ -28,4 +28,8 @@ recipeCards.propTypes = {
   }),
 };
 
-export default recipeCards;
+RecipeCards.defaultProps = {
+  recipeObj: {},
+};
+
+export default RecipeCards;
