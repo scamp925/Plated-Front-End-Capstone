@@ -6,19 +6,23 @@ import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { createDinnerCard } from '../../api/dinnersData';
 import { getRecipes } from '../../api/recipesData';
+import { getDaysOfTheWeek } from '../../api/daysOfTheWeekData';
 
 const initialState = {
   recipeId: '',
-  dayId: '',
+  // dayId: '',
 };
+
 function DinnerForm({ dinnerObj }) {
   const [formInput, setFormInput] = useState(initialState);
   const [recipeForDinner, seRecipeForDinner] = useState([]);
+  const [day, setDay] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
     getRecipes(user.uid).then(seRecipeForDinner);
+    getDaysOfTheWeek().then(setDay);
   }, [user]);
 
   const handleChange = (e) => {
@@ -31,7 +35,7 @@ function DinnerForm({ dinnerObj }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { ...formInput, uid: user.uid };
+    const payload = { ...formInput, uid: user.uid, dayId: day.firebaseKey };
     createDinnerCard(payload).then(() => {
       router.push('/');
     });
@@ -68,7 +72,7 @@ DinnerForm.propTypes = {
   dinnerObj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     recipeId: PropTypes.string,
-    dayId: PropTypes.string,
+    // dayId: PropTypes.string,
   }).isRequired,
 };
 
