@@ -39,6 +39,7 @@ function DinnerForm({ dinnerObj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
+      <h2 className="title mt-5">{dinnerObj?.firebaseKey ? 'Update' : 'Select'} a Meal for Dinner</h2>
       <Form.Select
         name="recipeId"
         onChange={handleChange}
