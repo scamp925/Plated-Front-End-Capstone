@@ -14,7 +14,7 @@ const initialState = {
   preheat: '',
   ingredients: '',
   directions: '',
-  leftovers: '',
+  leftovers: false,
 };
 
 function RecipeForm({ recipeObj }) {
