@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
@@ -42,15 +41,19 @@ function RecipeForm({ recipeObj }) {
     <Form onSubmit={handleSubmit}>
       <h1 className="title mt-5">{recipeObj?.firebaseKey ? 'Update' : 'Add'} a Recipe</h1>
       <div className="margin-top" />
-      <FloatingLabel controlId="floatingInput1" label="Recipe's Name" className="mb-3">
-        <Form.Control type="text" placeholder="Ex: Cacio e Pepe" name="name" value={formInput.name} onChange={handleChange} required />
-      </FloatingLabel>
-      <FloatingLabel controlId="floatingInput2" label="Total Time" className="mb-3">
-        <Form.Control type="text" placeholder="Ex: 30 minutes" name="totalTime" value={formInput.totalTime} onChange={handleChange} required />
-      </FloatingLabel>
-      <FloatingLabel controlId="floatingInput3" label="Preheat Oven To" className="mb-3">
-        <Form.Control type="text" placeholder="Ex: 350 degrees" name="preheat" value={formInput.preheat} onChange={handleChange} />
-      </FloatingLabel>
+      <Form.Group className="mb-3" controlId="formBasicInput">
+        <Form.Label>Name of Recipe</Form.Label>
+        <Form.Control type="text" placeholder="e.g. Cacio e Pepe" name="name" value={formInput.name} onChange={handleChange} required />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicInput">
+        <Form.Label>Total Time</Form.Label>
+        <Form.Control type="text" placeholder="e.g. 30 minutes" name="totalTime" value={formInput.totalTime} onChange={handleChange} required />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicInput">
+        <Form.Label>Preheat Oven To</Form.Label>
+        <Form.Text className="text-muted">Leave blank if a preheat is not needed</Form.Text>
+        <Form.Control type="text" placeholder="e.g. 350 degrees" name="preheat" value={formInput.preheat} onChange={handleChange} />
+      </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Ingredients</Form.Label>
         <Form.Control as="textarea" rows={3} type="text" placeholder="List recipe's ingredients here" name="ingredients" value={formInput.ingredients} onChange={handleChange} />
