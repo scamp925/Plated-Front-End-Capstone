@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { createDinnerCard } from '../../api/dinnersData';
 import { getRecipes } from '../../api/recipesData';
-import { getDaysOfTheWeek } from '../../api/daysOfTheWeekData';
+// import { getDaysOfTheWeek } from '../../api/daysOfTheWeekData';
 
 const initialState = {
   recipeId: '',
@@ -15,14 +15,18 @@ const initialState = {
 
 function DinnerForm({ dinnerObj }) {
   const [formInput, setFormInput] = useState(initialState);
-  const [recipeForDinner, seRecipeForDinner] = useState([]);
-  const [day, setDay] = useState([]);
+  const [recipeForDinner, setRecipeForDinner] = useState([]);
+  // const [day, setDay] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
+  // const findDay = (dinnersArray, daysArray) => {
+  //   const results = dinnersArray.map((dinner) => daysArray.find((theDay) => theDay.firebaseKey === dinner.dayId));
+  //   setDay(results);
+  // };
+
   useEffect(() => {
-    getRecipes(user.uid).then(seRecipeForDinner);
-    getDaysOfTheWeek().then(setDay);
+    getRecipes(user.uid).then(setRecipeForDinner);
   }, [user]);
 
   const handleChange = (e) => {
@@ -35,7 +39,7 @@ function DinnerForm({ dinnerObj }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { ...formInput, uid: user.uid, dayId: day.firebaseKey };
+    const payload = { ...formInput, uid: user.uid };
     createDinnerCard(payload).then(() => {
       router.push('/');
     });
