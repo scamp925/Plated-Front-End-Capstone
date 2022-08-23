@@ -16,6 +16,13 @@ const getDinnerCards = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET SINGLE DINNER CARD BY DAYID
+const getSingleDinnerCard = (dayId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/dinners.json?orderBy="dayId"&equalTo="${dayId}"`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
 // CREATE DINNER CARD
 const createDinnerCard = (newDinnerCardObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/dinners.json`, newDinnerCardObj)
@@ -44,6 +51,7 @@ const deleteDinnerCard = (firebaseKey) => new Promise((resolve, reject) => {
 
 export {
   getDinnerCards,
+  getSingleDinnerCard,
   createDinnerCard,
   updateDinnerCard,
   deleteDinnerCard,
