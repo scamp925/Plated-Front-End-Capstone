@@ -17,20 +17,20 @@ const getDinnerCards = (uid) => new Promise((resolve, reject) => {
 });
 
 // CREATE DINNER CARD
-const createDinnerCard = (newRecipeObj) => new Promise((resolve, reject) => {
-  axios.post(`${dbUrl}/dinners.json`, newRecipeObj)
+const createDinnerCard = (newDinnerCardObj) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/dinners.json`, newDinnerCardObj)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/dinners/${response.data.name}.json`, body).then(() => {
-        getDinnerCards(newRecipeObj.uid).then(resolve);
+        getDinnerCards(newDinnerCardObj.uid).then(resolve);
       });
     })
     .catch(reject);
 });
 
 // UPDATE DINNER CARD
-const updateDinnerCard = (recipeObj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/dinners/${recipeObj.firebaseKey}.json`, recipeObj)
+const updateDinnerCard = (dinnerCardObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/dinners/${dinnerCardObj.firebaseKey}.json`, dinnerCardObj)
     .then(resolve)
     .catch(reject);
 });

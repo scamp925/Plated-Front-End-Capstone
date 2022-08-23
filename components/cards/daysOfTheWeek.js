@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-// import { createDinnerCard } from '../../api/dinnersData';
 // import RecipeCards from './recipeCards';
 
 function DaysOfTheWeek({ dayObj, dinnerObj }) {
@@ -16,7 +15,7 @@ function DaysOfTheWeek({ dayObj, dinnerObj }) {
         </Card.Body>
         <footer>
           <Link href={`/dinners/new/${dayObj.firebaseKey}`} passHref>
-            <Button variant="success" className="add-btn" id={dayObj.firebaseKey}>Add</Button>
+            <Button variant="success" className="add-btn">Add</Button>
           </Link>
           {dinnerObj.firebaseKey && (
             <div className="edit-delete-footer">

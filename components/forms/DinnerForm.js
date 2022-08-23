@@ -6,24 +6,17 @@ import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { createDinnerCard } from '../../api/dinnersData';
 import { getRecipes } from '../../api/recipesData';
-// import { getDaysOfTheWeek } from '../../api/daysOfTheWeekData';
 
 const initialState = {
   recipeId: '',
-  // dayId: '',
+  dayId: '',
 };
 
-function DinnerForm({ dinnerObj }) {
+function DinnerForm({ dinnerObj, dayId }) {
   const [formInput, setFormInput] = useState(initialState);
   const [recipeForDinner, setRecipeForDinner] = useState([]);
-  // const [day, setDay] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
-
-  // const findDay = (dinnersArray, daysArray) => {
-  //   const results = dinnersArray.map((dinner) => daysArray.find((theDay) => theDay.firebaseKey === dinner.dayId));
-  //   setDay(results);
-  // };
 
   useEffect(() => {
     getRecipes(user.uid).then(setRecipeForDinner);
@@ -39,7 +32,7 @@ function DinnerForm({ dinnerObj }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { ...formInput, uid: user.uid };
+    const payload = { ...formInput, uid: user.uid, dayId };
     createDinnerCard(payload).then(() => {
       router.push('/');
     });
@@ -76,8 +69,8 @@ DinnerForm.propTypes = {
   dinnerObj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     recipeId: PropTypes.string,
-    // dayId: PropTypes.string,
   }).isRequired,
+  dayId: PropTypes.string.isRequired,
 };
 
 export default DinnerForm;

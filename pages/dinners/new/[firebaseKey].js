@@ -1,10 +1,14 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import DinnerForm from '../../../components/forms/DinnerForm';
 
-export default function addRecipeForm() {
+export default function AddRecipeForm() {
+  const router = useRouter();
+  const { firebaseKey } = router.query;
+
   return (
     <div>
-      <DinnerForm />
+      <DinnerForm dayId={firebaseKey} />
     </div>
   );
 }
