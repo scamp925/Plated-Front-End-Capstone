@@ -6,12 +6,15 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import RecipeCards from './recipeCards';
 import getRecipeOnDinnerCard from '../../api/mergedData';
+import { getDinnersByDay } from '../../api/dinnersData';
 
-function DinnerCards({ dayObj, dinnerObj }) {
-  const [recipes, setRecipes] = useState({});
+function DinnerCards({ dayObj }) {
+  const [recipe, setRecipe] = useState({});
+  const [dinnerObj, setDinnerObj] = useState({});
 
   useEffect(() => {
-    getRecipeOnDinnerCard(dayObj.firebaseKey).then(setRecipes);
+    getRecipeOnDinnerCard(dayObj.firebaseKey).then(setRecipe);
+    getDinnersByDay(dayObj.firebaseKey).then(setDinnerObj);
   }, []);
 
   return (
@@ -19,11 +22,12 @@ function DinnerCards({ dayObj, dinnerObj }) {
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>{dayObj.day}</Card.Title>
-          {/* {dayObj.firebaseKey === dinnerObj.dayId && ()} */}
-          <RecipeCards key={dinnerObj.recipeId} recipeObj={recipes} />
+          {dayObj.firebaseKey === dinnerObj[0]?.dayId && (
+            <RecipeCards key={dinnerObj.recipeId} recipeObj={recipe} />
+          )}
         </Card.Body>
         <footer>
-          {dayObj.firebaseKey === dinnerObj.dayId ? (
+          {dayObj.firebaseKey === dinnerObj[0]?.dayId ? (
             <div className="edit-delete-footer">
               <Card.Link href={`/dinners/edit/${dinnerObj.firebaseKey}`}>
                 <Button variant="warning" className="edit-btn">Edit</Button>
@@ -46,16 +50,10 @@ DinnerCards.propTypes = {
     day: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
-  dinnerObj: PropTypes.shape({
-    recipeId: PropTypes.string,
-    dayId: PropTypes.string,
-    firebaseKey: PropTypes.string,
-  }),
 };
 
 DinnerCards.defaultProps = {
   dayObj: {},
-  dinnerObj: {},
 };
 
 export default DinnerCards;
