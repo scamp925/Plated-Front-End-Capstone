@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { getDaysOfTheWeek } from '../api/daysOfTheWeekData';
-// import { getSingleDinnerCard } from '../api/dinnersData';
 import DinnerCards from '../components/cards/dinnerCards';
 
 function Home() {
