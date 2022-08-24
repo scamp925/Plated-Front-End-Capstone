@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { getDaysOfTheWeek } from '../api/daysOfTheWeekData';
 import { getSingleDinnerCard } from '../api/dinnersData';
-import DaysOfTheWeek from '../components/cards/daysOfTheWeek';
+import DinnerCards from '../components/cards/dinnerCards';
 
 function Home() {
   const [days, setDays] = useState([]);
@@ -26,7 +26,7 @@ function Home() {
       <h2>Dinners This Week</h2>
       <div className="days-container">
         {days?.map((day) => (
-          <DaysOfTheWeek key={day.firebaseKey} dayObj={day} dinnerObj={dinnerCards} />
+          <DinnerCards key={day.firebaseKey} dayObj={day} dinnerObj={dinnerCards} />
         ))}
       </div>
     </div>

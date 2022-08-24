@@ -1,32 +1,46 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react';
-// import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-// import RecipeCards from './recipeCards';
-// import { getRecipes } from '../../api/recipesData';
-// import { useAuth } from '../../utils/context/authContext';
+import RecipeCards from './recipeCards';
+import { getRecipes } from '../../api/recipesData';
+// import { getRecipes, getSingleRecipe } from '../../api/recipesData';
+import { useAuth } from '../../utils/context/authContext';
+// import { getDinnerCards, getSingleDinnerCard } from '../../api/dinnersData';
+// import DinnerCards from './dinnerCards';
+// // import getRecipeOnDinnerCard from '../../api/mergedData';
+// import { getSingleDinnerCard } from '../../api/dinnersData';
 
 function DinnerCards({ dayObj, dinnerObj }) {
-  // const [recipes, setRecipes] = useState([]);
-  // const { user } = useAuth();
+  // const [dinnerCard, setDinnerCard] = useState({});
+  const [recipes, setRecipes] = useState([]);
+  const { user } = useAuth();
 
-  // // const findRecipe = recipes?.find((recipe) => dinnerObj.recipeId === recipe.firebaseKey);
+  const findRecipe = recipes?.find((recipe) => dinnerObj.recipeId === recipe.firebaseKey);
 
-  // useEffect(() => {
-  //   getRecipes(user.uid).then(setRecipes);
-  // }, []);
+  useEffect(() => {
+    // getSingleDinnerCard(dayObj.firebaseKey).then(setDinnerCard);
+    // getRecipeOnDinnerCard (dinnerObj.dayId, dinnerObj.recipeId).then(setDinnerCard);
+    // getSingleDinnerCard(dayObj.firebaseKey).then(setDinnerCard).then(() => {
+    //   getSingleRecipe(dinnerCard.recipeId).then((response) => {
+    //     console.warn(response);
+    //   });
+    // });
+    getRecipes(user.uid).then(setRecipes);
+  }, []);
 
   return (
     <div>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
-          {/* <RecipeCards key={dinnerObj.recipeId} recipeObj={findRecipe} /> */}
+          <Card.Title>{dayObj.day}</Card.Title>
+          {/* {dayObj.firebaseKey === dinnerObj.dayId && ()} */}
+          <RecipeCards key={dinnerObj.recipeId} recipeObj={findRecipe} />
         </Card.Body>
         <footer>
-          {dinnerObj.recipeId ? (
+          {dayObj.firebaseKey === dinnerObj.dayId ? (
             <div className="edit-delete-footer">
               <Card.Link href={`/dinners/edit/${dinnerObj.firebaseKey}`}>
                 <Button variant="warning" className="edit-btn">Edit</Button>
