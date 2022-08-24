@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { getDaysOfTheWeek } from '../api/daysOfTheWeekData';
-import DaysOfTheWeek from '../components/cards/daysOfTheWeek';
+import DinnerCards from '../components/cards/dinnerCards';
 
 function Home() {
   const [days, setDays] = useState([]);
@@ -18,7 +19,7 @@ function Home() {
       <h2>Dinners This Week</h2>
       <div className="days-container">
         {days?.map((day) => (
-          <DaysOfTheWeek key={day.firebaseKey} dayObj={day} />
+          <DinnerCards key={day.firebaseKey} dayObj={day} />
         ))}
       </div>
     </div>

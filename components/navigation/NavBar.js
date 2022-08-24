@@ -5,13 +5,11 @@ import Sidebar from './Sidebar';
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-md navbar-light bg-light">
       <div className="container-fluid">
         <Sidebar />
         <Link passHref href="/">
-          <a className="navbar-brand" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
-            <h1>Plated</h1>
-          </a>
+          <h1>Plated</h1>
         </Link>
       </div>
     </nav>
