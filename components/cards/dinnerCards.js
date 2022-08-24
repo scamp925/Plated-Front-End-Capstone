@@ -5,30 +5,13 @@ import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import RecipeCards from './recipeCards';
-import { getRecipes } from '../../api/recipesData';
-// import { getRecipes, getSingleRecipe } from '../../api/recipesData';
-import { useAuth } from '../../utils/context/authContext';
-// import { getDinnerCards, getSingleDinnerCard } from '../../api/dinnersData';
-// import DinnerCards from './dinnerCards';
-// // import getRecipeOnDinnerCard from '../../api/mergedData';
-// import { getSingleDinnerCard } from '../../api/dinnersData';
+import getRecipeOnDinnerCard from '../../api/mergedData';
 
 function DinnerCards({ dayObj, dinnerObj }) {
-  // const [dinnerCard, setDinnerCard] = useState({});
-  const [recipes, setRecipes] = useState([]);
-  const { user } = useAuth();
-
-  const findRecipe = recipes?.find((recipe) => dinnerObj.recipeId === recipe.firebaseKey);
+  const [recipes, setRecipes] = useState({});
 
   useEffect(() => {
-    // getSingleDinnerCard(dayObj.firebaseKey).then(setDinnerCard);
-    // getRecipeOnDinnerCard (dinnerObj.dayId, dinnerObj.recipeId).then(setDinnerCard);
-    // getSingleDinnerCard(dayObj.firebaseKey).then(setDinnerCard).then(() => {
-    //   getSingleRecipe(dinnerCard.recipeId).then((response) => {
-    //     console.warn(response);
-    //   });
-    // });
-    getRecipes(user.uid).then(setRecipes);
+    getRecipeOnDinnerCard(dayObj.firebaseKey).then(setRecipes);
   }, []);
 
   return (
@@ -37,7 +20,7 @@ function DinnerCards({ dayObj, dinnerObj }) {
         <Card.Body>
           <Card.Title>{dayObj.day}</Card.Title>
           {/* {dayObj.firebaseKey === dinnerObj.dayId && ()} */}
-          <RecipeCards key={dinnerObj.recipeId} recipeObj={findRecipe} />
+          <RecipeCards key={dinnerObj.recipeId} recipeObj={recipes} />
         </Card.Body>
         <footer>
           {dayObj.firebaseKey === dinnerObj.dayId ? (

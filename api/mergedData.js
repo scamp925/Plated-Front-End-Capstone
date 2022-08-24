@@ -1,21 +1,16 @@
-import { getSingleDinnerCard } from './dinnersData';
+import { getDinnersByDay } from './dinnersData';
 import { getSingleRecipe } from './recipesData';
 
 // // GET RECIPE ON DINNER CARD
-const getRecipeOnDinnerCard = (dayFirebaseKey, recipeFirebaseKey) => new Promise((resolve, reject) => {
-  getSingleDinnerCard(dayFirebaseKey)
-    .then(() => getSingleRecipe(recipeFirebaseKey)
-      .then(resolve))
+const getRecipeOnDinnerCard = (dayId) => new Promise((resolve, reject) => {
+  getDinnersByDay(dayId).then((dinnersArray) => {
+    const recipeIdPromises = dinnersArray.map((dinners) => getSingleRecipe(dinners.recipeId));
+
+    Promise.all(recipeIdPromises).then((recipeArray) => {
+      resolve(recipeArray[0]);
+    });
+  })
     .catch(reject);
 });
 
-// // GET DAY ON DINNER CARD
-// const getDayOnDinnerCard = (dayFirebaseKey) => new Promise((resolve, reject) => {
-
-// });
-
 export default getRecipeOnDinnerCard;
-// export {
-//   getRecipeOnDinnerCard,
-//   getDayOnDinnerCard,
-// };
