@@ -16,7 +16,6 @@ import { useAuth } from '../../utils/context/authContext';
 function DaysOfTheWeek({ dayObj, dinnerObj }) {
   // const [dinnerCard, setDinnerCard] = useState({});
   const [recipes, setRecipes] = useState([]);
-  // const [recipes, setRecipes] = useState([]);
   const { user } = useAuth();
 
   const findRecipe = recipes?.find((recipe) => dinnerObj.recipeId === recipe.firebaseKey);
