@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { getSingleRecipe } from '../../api/recipesData';
-import SingleViewRecipeCard from '../../components/cards/singleViewRecipeCard';
+import SingleViewRecipeCard from '../../components/cards/SingleViewRecipeCard';
 
 export default function ViewSingleRecipe() {
   const [singleRecipe, setSingleRecipe] = useState({});

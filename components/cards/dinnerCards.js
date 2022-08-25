@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import RecipeCards from './recipeCards';
+import RecipeCards from './RecipeCards';
 import getRecipeOnDinnerCard from '../../api/mergedData';
 import { deleteDinnerCard, getDinnersByDay } from '../../api/dinnersData';
 

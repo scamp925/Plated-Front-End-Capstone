@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { getDaysOfTheWeek } from '../api/daysOfTheWeekData';
-import DinnerCards from '../components/cards/dinnerCards';
+import DinnerCards from '../components/cards/DinnerCards';
 
 function Home() {
   const [days, setDays] = useState([]);
