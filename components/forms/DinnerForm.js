@@ -66,7 +66,7 @@ function DinnerForm({ dinnerObj, dayId }) {
             ))
           }
       </Form.Select>
-      <Button type="submit" variant="dark" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
+      <Button type="submit" variant="success" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
     </Form>
   );
 }

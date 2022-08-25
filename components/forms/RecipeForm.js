@@ -95,7 +95,7 @@ function RecipeForm({ recipeObj }) {
           />
         </div>
       ))}
-      <Button type="submit" variant="dark" className="form-btn">{recipeObj?.firebaseKey ? 'Update' : 'Add'} Recipe</Button>
+      <Button type="submit" variant="success" className="form-btn">{recipeObj?.firebaseKey ? 'Update' : 'Add'} Recipe</Button>
     </Form>
   );
 }
