@@ -55,7 +55,7 @@ const updateDinnerCard = (dinnerCardObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// DELETE DINNER CARD
+// DELETE SINGLE DINNER CARD
 const deleteDinnerCard = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/dinners/${firebaseKey}.json`)
     .then(resolve)

@@ -8,20 +8,21 @@ import RecipeCards from './RecipeCards';
 import { getRecipeOnDinnerCard } from '../../api/mergedData';
 import { deleteDinnerCard, getDinnersByDay } from '../../api/dinnersData';
 
-function DinnerCards({ dayObj, onUpdate }) {
+function DinnerCards({ dayObj }) {
   const [recipe, setRecipe] = useState({});
   const [dinnerObj, setDinnerObj] = useState({});
+  const [deletedDinnerObj, setDeletedDinnerObj] = useState(false);
 
   const deleteThisDinnerCard = () => {
     if (window.confirm(`Are you sure you want to clear ${dayObj.day}'s current meal? Click "OK" if you wish to continue.`)) {
-      deleteDinnerCard(dinnerObj[0]?.firebaseKey).then(() => onUpdate());
+      deleteDinnerCard(dinnerObj[0]?.firebaseKey).then(() => setDeletedDinnerObj(!deletedDinnerObj));
     }
   };
 
   useEffect(() => {
     getRecipeOnDinnerCard(dayObj.firebaseKey).then(setRecipe);
     getDinnersByDay(dayObj.firebaseKey).then(setDinnerObj);
-  }, []);
+  }, [deletedDinnerObj]);
 
   return (
     <div>
@@ -56,7 +57,6 @@ DinnerCards.propTypes = {
     day: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
-  onUpdate: PropTypes.func.isRequired,
 };
 
 DinnerCards.defaultProps = {

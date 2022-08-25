@@ -21,7 +21,7 @@ function Home() {
       <Button variant="secondary">Clear the Dinners for This Week</Button>
       <div className="days-container">
         {days?.map((day) => (
-          <DinnerCards key={day.firebaseKey} dayObj={day} onUpdate={getSunThruSat} />
+          <DinnerCards key={day.firebaseKey} dayObj={day} />
         ))}
       </div>
     </div>
