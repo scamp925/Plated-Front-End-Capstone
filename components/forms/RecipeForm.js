@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
-import { createRecipe } from '../../api/recipesData';
+import { createRecipe, updateRecipe } from '../../api/recipesData';
 
 const initialState = {
   firebaseKey: '',
@@ -21,6 +21,10 @@ function RecipeForm({ recipeObj }) {
   const router = useRouter();
   const { user } = useAuth();
 
+  useEffect(() => {
+    if (recipeObj?.firebaseKey) setFormInput(recipeObj);
+  }, [recipeObj, user]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormInput((prevState) => ({
@@ -31,10 +35,15 @@ function RecipeForm({ recipeObj }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { ...formInput, uid: user.uid };
-    createRecipe(payload).then(() => {
-      router.push('/recipes/recipes');
-    });
+    if (recipeObj?.firebaseKey) {
+      updateRecipe(formInput)
+        .then(() => router.push(`/recipes/${recipeObj.firebaseKey}`));
+    } else {
+      const payload = { ...formInput, uid: user.uid };
+      createRecipe(payload).then(() => {
+        router.push('/recipes/recipes');
+      });
+    }
   };
 
   return (

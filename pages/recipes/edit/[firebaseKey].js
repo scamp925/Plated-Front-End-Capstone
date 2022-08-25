@@ -13,6 +13,6 @@ export default function EditRecipe() {
   }, [firebaseKey]);
 
   return (
-    <RecipeForm obj={editItem} />
+    <RecipeForm recipeObj={editItem} />
   );
 }
