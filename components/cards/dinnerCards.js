@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import RecipeCards from './RecipeCards';
-import getRecipeOnDinnerCard from '../../api/mergedData';
+import { getRecipeOnDinnerCard } from '../../api/mergedData';
 import { deleteDinnerCard, getDinnersByDay } from '../../api/dinnersData';
 
 function DinnerCards({ dayObj, onUpdate }) {
