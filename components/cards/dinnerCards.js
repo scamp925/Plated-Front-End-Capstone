@@ -30,7 +30,7 @@ function DinnerCards({ dayObj }) {
           {dayObj.firebaseKey === dinnerObj[0]?.dayId ? (
             <div className="edit-delete-footer">
               <Card.Link href={`/dinners/edit/${dinnerObj.firebaseKey}`}>
-                <Button variant="warning" className="edit-btn">Edit</Button>
+                <Button variant="info" className="edit-btn">Edit</Button>
               </Card.Link>
               <Button variant="danger" className="delete-btn">Delete</Button>
             </div>

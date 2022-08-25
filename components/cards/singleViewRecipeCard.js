@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
-// import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';
 
 function SingleViewRecipeCards({ recipeObj }) {
   return (
@@ -27,6 +27,12 @@ function SingleViewRecipeCards({ recipeObj }) {
           <Card.Text className="box-around-input">{recipeObj.ingredients}</Card.Text>
           <Card.Text>{recipeObj.directions && 'Directions'}</Card.Text>
           <Card.Text className="box-around-input">{recipeObj.directions}</Card.Text>
+          <footer className="edit-delete-footer">
+            <Card.Link href={`/recipes/edit/${recipeObj.firebaseKey}`}>
+              <Button variant="info" className="edit-btn">Edit</Button>
+            </Card.Link>
+            <Button variant="danger" className="delete-btn">Delete</Button>
+          </footer>
         </Card.Body>
       </Card>
     </div>
