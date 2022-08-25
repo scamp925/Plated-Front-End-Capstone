@@ -14,7 +14,7 @@ function DinnerCards({ dayObj, onUpdate }) {
 
   const deleteThisDinnerCard = () => {
     if (window.confirm(`Are you sure you want to clear ${dayObj.day}'s current meal? Click "OK" if you wish to continue.`)) {
-      deleteDinnerCard(dinnerObj.firebaseKey).then(() => onUpdate());
+      deleteDinnerCard(dinnerObj[0]?.firebaseKey).then(() => onUpdate());
     }
   };
 

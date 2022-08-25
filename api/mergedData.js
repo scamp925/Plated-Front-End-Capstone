@@ -23,18 +23,7 @@ const deleteRecipeCompletely = (recipeId) => new Promise((resolve, reject) => {
   }).catch(reject);
 });
 
-const deleteDinnerOnDay = (dayId, firebaseKey) => new Promise((resolve, reject) => {
-  getDinnersByDay(dayId).then((dinnersArray) => {
-    const deleteDinnerCardPromises = dinnersArray.map((dinner) => deleteDinnerCard(dinner.firebaseKey));
-
-    Promise.all(deleteDinnerCardPromises).then(() => {
-      deleteDinnerCard(firebaseKey).then(resolve);
-    });
-  }).catch(reject);
-});
-
 export {
   getRecipeOnDinnerCard,
   deleteRecipeCompletely,
-  deleteDinnerOnDay,
 };
