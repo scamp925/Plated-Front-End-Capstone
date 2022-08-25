@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { getSingleRecipe } from '../../api/recipesData';
-import SingleViewRecipeCards from '../../components/cards/singleViewRecipeCard';
+import SingleViewRecipeCard from '../../components/cards/singleViewRecipeCard';
 
 export default function ViewSingleRecipe() {
   const [singleRecipe, setSingleRecipe] = useState({});
@@ -19,7 +19,7 @@ export default function ViewSingleRecipe() {
 
   return (
     <div>
-      <SingleViewRecipeCards recipeObj={singleRecipe} />
+      <SingleViewRecipeCard recipeObj={singleRecipe} />
     </div>
   );
 }

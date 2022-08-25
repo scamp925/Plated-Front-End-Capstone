@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-function SingleViewRecipeCards({ recipeObj }) {
+function SingleViewRecipeCard({ recipeObj }) {
   return (
     <div>
       <Card>
@@ -28,7 +28,7 @@ function SingleViewRecipeCards({ recipeObj }) {
   );
 }
 
-SingleViewRecipeCards.propTypes = {
+SingleViewRecipeCard.propTypes = {
   recipeObj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     name: PropTypes.string,
@@ -40,8 +40,8 @@ SingleViewRecipeCards.propTypes = {
   }),
 };
 
-SingleViewRecipeCards.defaultProps = {
+SingleViewRecipeCard.defaultProps = {
   recipeObj: {},
 };
 
-export default SingleViewRecipeCards;
+export default SingleViewRecipeCard;
