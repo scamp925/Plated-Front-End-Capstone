@@ -1,22 +1,25 @@
-import { useRouter } from 'next/router';
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import { getSingleDinnerCard } from '../../api/dinnersData';
-import DinnerForm from '../../components/forms/DinnerForm';
+import { useRouter } from 'next/router';
+import { getSingleRecipe } from '../../api/recipesData';
+import SingleViewRecipeCard from '../../components/cards/singleViewRecipeCard';
 
-function EditDinnerCard() {
-  const [editItem, setEditItem] = useState();
+export default function ViewSingleRecipe() {
+  const [singleRecipe, setSingleRecipe] = useState({});
   const router = useRouter();
   const { firebaseKey } = router.query;
 
+  const theRecipe = () => {
+    getSingleRecipe(firebaseKey).then(setSingleRecipe);
+  };
+
   useEffect(() => {
-    getSingleDinnerCard(firebaseKey).then(setEditItem);
-  }, [firebaseKey]);
+    theRecipe();
+  }, []);
 
   return (
     <div>
-      <DinnerForm dinnerObj={editItem} />
+      <SingleViewRecipeCard recipeObj={singleRecipe} />
     </div>
   );
 }
-
-export default EditDinnerCard;
