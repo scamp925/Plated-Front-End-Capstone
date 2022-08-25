@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { deleteRecipe } from '../../api/recipesData';
+// import { deleteRecipe } from '../../api/recipesData';
 
-function SingleViewRecipeCard({ recipeObj, onUpdate }) {
-  const deleteThisRecipe = () => {
-    if (window.confirm(`Warning! You are about to permanently delete ${recipeObj.name}. Click "OK" if you wish to continue.`)) {
-      deleteRecipe(recipeObj.firebaseKey).then(() => onUpdate());
-    }
-  };
+function SingleViewRecipeCard({ recipeObj }) {
+  // const deleteThisRecipe = () => {
+  //   if (window.confirm(`Warning! You are about to permanently delete ${recipeObj.name}. Click "OK" if you wish to continue.`)) {
+  //     deleteRecipe(recipeObj.firebaseKey).then(() => onUpdate());
+  //   }
+  // };
 
   return (
     <div>
@@ -27,7 +27,7 @@ function SingleViewRecipeCard({ recipeObj, onUpdate }) {
             <Card.Link href={`/recipes/edit/${recipeObj.firebaseKey}`}>
               <Button variant="info" className="edit-btn">Edit</Button>
             </Card.Link>
-            <Button variant="danger" className="delete-btn" onClick={deleteThisRecipe}>Delete</Button>
+            <Button variant="danger" className="delete-btn">Delete</Button>
           </footer>
         </Card.Body>
       </Card>
@@ -45,7 +45,7 @@ SingleViewRecipeCard.propTypes = {
     ingredients: PropTypes.string,
     directions: PropTypes.string,
   }),
-  onUpdate: PropTypes.func.isRequired,
+  // onUpdate: PropTypes.func.isRequired,
 };
 
 SingleViewRecipeCard.defaultProps = {

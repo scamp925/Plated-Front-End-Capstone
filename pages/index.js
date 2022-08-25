@@ -19,7 +19,7 @@ function Home() {
       <h2>Dinners This Week</h2>
       <div className="days-container">
         {days?.map((day) => (
-          <DinnerCards key={day.firebaseKey} dayObj={day} />
+          <DinnerCards key={day.firebaseKey} dayObj={day} onUpdate={getSunThruSat} />
         ))}
       </div>
     </div>
