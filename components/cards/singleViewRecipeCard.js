@@ -23,8 +23,10 @@ function SingleViewRecipeCards({ recipeObj }) {
           <Card.Text>Total Time: {recipeObj.totalTime}</Card.Text>
           <Card.Text>{recipeObj.leftovers === true ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
           <Card.Text>{recipeObj.preheat && 'Preheat Oven To:'} {recipeObj.preheat}</Card.Text>
-          <Card.Text>{recipeObj.ingredients && 'Ingredients'} {recipeObj.ingredients}</Card.Text>
-          <Card.Text>{recipeObj.directions && 'Directiosn'} {recipeObj.directions}</Card.Text>
+          <Card.Text>{recipeObj.ingredients && 'Ingredients'}</Card.Text>
+          <Card.Text className="box-around-input">{recipeObj.ingredients}</Card.Text>
+          <Card.Text>{recipeObj.directions && 'Directions'}</Card.Text>
+          <Card.Text className="box-around-input">{recipeObj.directions}</Card.Text>
         </Card.Body>
       </Card>
     </div>
