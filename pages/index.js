@@ -2,17 +2,25 @@
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { getDaysOfTheWeek } from '../api/daysOfTheWeekData';
+import { deleteAllDinnerCards } from '../api/mergedData';
 import DinnerCards from '../components/cards/DinnerCards';
+import { useAuth } from '../utils/context/authContext';
 
 function Home() {
   const [days, setDays] = useState([]);
+  const { user } = useAuth();
 
   const getSunThruSat = () => {
     getDaysOfTheWeek().then(setDays);
   };
 
+  const deleteAllDinners = () => {
+    deleteAllDinnerCards(user.uid);
+  };
+
   useEffect(() => {
     getSunThruSat();
+    deleteAllDinners();
   }, []);
 
   return (
