@@ -13,7 +13,7 @@ const initialState = {
   preheat: '',
   ingredients: '',
   directions: '',
-  leftovers: false,
+  leftovers: '',
 };
 
 function RecipeForm({ recipeObj }) {
@@ -80,10 +80,11 @@ function RecipeForm({ recipeObj }) {
             name="leftovers"
             type={type}
             id={`inline-${type}-1`}
-            checked={formInput.leftovers}
+            value="Yes"
+            checked={formInput.leftovers === 'Yes'}
             onChange={(e) => setFormInput((prevState) => ({
               ...prevState,
-              leftovers: e.target.checked,
+              leftovers: e.target.value,
             }))}
           />
           <Form.Check
@@ -92,6 +93,12 @@ function RecipeForm({ recipeObj }) {
             name="leftovers"
             type={type}
             id={`inline-${type}-2`}
+            value="No"
+            checked={formInput.leftovers === 'No'}
+            onChange={(e) => setFormInput((prevState) => ({
+              ...prevState,
+              leftovers: e.target.value,
+            }))}
           />
         </div>
       ))}
