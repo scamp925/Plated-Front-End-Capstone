@@ -1,5 +1,5 @@
 import {
-  deleteDinnerCard, getDinnerCards, getDinnersByDay, getDinnersByRecipe,
+  deleteDinnerCard, deleteDinnerCards, getDinnerCards, getDinnersByDay, getDinnersByRecipe,
 } from './dinnersData';
 import { deleteRecipe, getSingleRecipe } from './recipesData';
 
@@ -32,7 +32,7 @@ const deleteAllDinnerCards = (uid) => new Promise((resolve, reject) => {
     const dinnerCardPromises = dinnersArray.map((dinner) => dinner.firebaseKey);
 
     Promise.all(dinnerCardPromises).then((dinnerFbKeyArray) => {
-      deleteDinnerCard(dinnerFbKeyArray[0]).then(resolve);
+      deleteDinnerCards(dinnerFbKeyArray).then(resolve);
     });
   }).catch(reject);
 });

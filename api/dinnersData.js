@@ -62,6 +62,13 @@ const deleteDinnerCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// DELETE ALL DINNER CARDS
+const deleteDinnerCards = () => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/dinners.json`)
+    .then(resolve)
+    .catch(reject);
+});
+
 export {
   getDinnerCards,
   getDinnersByDay,
@@ -70,4 +77,5 @@ export {
   createDinnerCard,
   updateDinnerCard,
   deleteDinnerCard,
+  deleteDinnerCards,
 };
