@@ -115,7 +115,7 @@ RecipeForm.propTypes = {
     preheat: PropTypes.string,
     ingredients: PropTypes.string,
     directions: PropTypes.string,
-    leftovers: PropTypes.bool,
+    leftovers: PropTypes.string,
   }),
 };
 

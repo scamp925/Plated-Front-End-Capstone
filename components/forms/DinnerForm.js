@@ -51,10 +51,9 @@ function DinnerForm({ dinnerObj, dayId }) {
         name="recipeId"
         onChange={handleChange}
         className="mb-3"
-        value=""
         required
       >
-        <option>Select a Recipe</option>
+        <option value="">Select a Recipe</option>
         {
             recipeForDinner.map((recipe) => (
               <option
