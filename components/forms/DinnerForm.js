@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
-import { createDinnerCard } from '../../api/dinnersData';
+import { createDinnerCard, updateDinnerCard } from '../../api/dinnersData';
 import { getRecipes } from '../../api/recipesData';
 
 const initialState = {
@@ -20,7 +20,8 @@ function DinnerForm({ dinnerObj, dayId }) {
 
   useEffect(() => {
     getRecipes(user.uid).then(setRecipeForDinner);
-  }, [user]);
+    if (dinnerObj?.firebaseKey) setFormInput(dinnerObj);
+  }, [dinnerObj, user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,10 +33,15 @@ function DinnerForm({ dinnerObj, dayId }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { ...formInput, uid: user.uid, dayId };
-    createDinnerCard(payload).then(() => {
-      router.push('/');
-    });
+    if (dinnerObj?.firebaseKey) {
+      updateDinnerCard(formInput)
+        .then(() => router.push('/'));
+    } else {
+      const payload = { ...formInput, uid: user.uid, dayId };
+      createDinnerCard(payload).then(() => {
+        router.push('/');
+      });
+    }
   };
 
   return (
@@ -60,7 +66,7 @@ function DinnerForm({ dinnerObj, dayId }) {
             ))
           }
       </Form.Select>
-      <Button type="submit" variant="dark" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
+      <Button type="submit" variant="success" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
     </Form>
   );
 }

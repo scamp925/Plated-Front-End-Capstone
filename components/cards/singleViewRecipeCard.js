@@ -1,9 +1,21 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { deleteRecipeCompletely } from '../../api/mergedData';
 
-function SingleViewRecipeCard({ recipeObj }) {
+function SingleViewRecipeCard({ recipeObj, onUpdate }) {
+  const router = useRouter();
+
+  const deleteThisRecipe = () => {
+    if (window.confirm(`Warning! You are about to permanently delete ${recipeObj.name}. Click "OK" if you wish to continue.`)) {
+      deleteRecipeCompletely(recipeObj.firebaseKey).then(() => onUpdate()).then(() => {
+        router.push('/recipes/recipes');
+      });
+    }
+  };
+
   return (
     <div>
       <Card>
@@ -20,7 +32,7 @@ function SingleViewRecipeCard({ recipeObj }) {
             <Card.Link href={`/recipes/edit/${recipeObj.firebaseKey}`}>
               <Button variant="info" className="edit-btn">Edit</Button>
             </Card.Link>
-            <Button variant="danger" className="delete-btn">Delete</Button>
+            <Button variant="danger" className="delete-btn" onClick={deleteThisRecipe}>Delete</Button>
           </footer>
         </Card.Body>
       </Card>
@@ -38,6 +50,7 @@ SingleViewRecipeCard.propTypes = {
     ingredients: PropTypes.string,
     directions: PropTypes.string,
   }),
+  onUpdate: PropTypes.func.isRequired,
 };
 
 SingleViewRecipeCard.defaultProps = {

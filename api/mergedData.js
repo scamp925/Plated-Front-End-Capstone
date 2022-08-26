@@ -1,18 +1,32 @@
-import { getDinnersByDay } from './dinnersData';
-import { getSingleRecipe } from './recipesData';
+import {
+  deleteDinnerCard, getDinnersByDay, getDinnersByRecipe,
+} from './dinnersData';
+import { deleteRecipe, getSingleRecipe } from './recipesData';
 
 // // GET RECIPE ON DINNER CARD
 const getRecipeOnDinnerCard = (dayId) => new Promise((resolve, reject) => {
-  getDinnersByDay(dayId).then((dinnersArray) => {
-    console.warn(dinnersArray, 'dinner array');
-    const recipeIdPromises = dinnersArray.map((dinners) => getSingleRecipe(dinners.recipeId));
+  getDinnersByDay(dayId).then((dinnerArray) => {
+    const recipeIdPromises = dinnerArray.map((dinners) => getSingleRecipe(dinners.recipeId));
 
     Promise.all(recipeIdPromises).then((recipeArray) => {
-      console.warn(recipeArray);
       resolve(recipeArray[0]);
     });
   })
     .catch(reject);
 });
 
-export default getRecipeOnDinnerCard;
+// DELETE SINGLE RECIPE FROM ALL PAGES OF THE APP
+const deleteRecipeCompletely = (recipeId) => new Promise((resolve, reject) => {
+  getDinnersByRecipe(recipeId).then((dinnerArray) => {
+    const deleteDinnerCardPromises = dinnerArray.map((dinner) => deleteDinnerCard(dinner.firebaseKey));
+
+    Promise.all(deleteDinnerCardPromises).then(() => {
+      deleteRecipe(recipeId).then(resolve);
+    });
+  }).catch(reject);
+});
+
+export {
+  getRecipeOnDinnerCard,
+  deleteRecipeCompletely,
+};

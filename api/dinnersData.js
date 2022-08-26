@@ -23,6 +23,19 @@ const getDinnersByDay = (dayId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getDinnersByRecipe = (recipeId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/dinners.json?orderBy="recipeId"&equalTo="${recipeId}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
+
+// GET SINGLE DINNER CARD
+const getSingleDinnerCard = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/dinners/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
 // CREATE DINNER CARD
 const createDinnerCard = (newDinnerCardObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/dinners.json`, newDinnerCardObj)
@@ -42,9 +55,16 @@ const updateDinnerCard = (dinnerCardObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// DELETE DINNER CARD
+// DELETE SINGLE DINNER CARD
 const deleteDinnerCard = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/dinners/${firebaseKey}.json`)
+    .then(resolve)
+    .catch(reject);
+});
+
+// DELETE ALL DINNER CARDS
+const deleteDinnerCards = () => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/dinners.json`)
     .then(resolve)
     .catch(reject);
 });
@@ -52,7 +72,10 @@ const deleteDinnerCard = (firebaseKey) => new Promise((resolve, reject) => {
 export {
   getDinnerCards,
   getDinnersByDay,
+  getDinnersByRecipe,
+  getSingleDinnerCard,
   createDinnerCard,
   updateDinnerCard,
   deleteDinnerCard,
+  deleteDinnerCards,
 };

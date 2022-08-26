@@ -36,11 +36,6 @@ function Sidebar() {
                 Add Recipe
               </Link>
             </li>
-            <li className="nav-item">
-              <Link passHref href="/" onClick={signOut}>
-                Logout
-              </Link>
-            </li>
             <button type="button" className="btn btn-danger" onClick={signOut}>
               Sign Out
             </button>
