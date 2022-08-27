@@ -71,6 +71,12 @@ const deleteDinnerCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// DELETE ALL DINNER CARDS ASSOCIATED TO USER
+const clearAllDinners = (array) => new Promise((resolve, reject) => {
+  const arrayOfPromises = array.map((firebaseKey) => deleteDinnerCard(firebaseKey));
+
+  Promise.all(arrayOfPromises).then(resolve).catch(reject);
+});
 export {
   getDinnerCards,
   getDinnersByDay,
@@ -80,4 +86,5 @@ export {
   createDinnerCard,
   updateDinnerCard,
   deleteDinnerCard,
+  clearAllDinners,
 };
