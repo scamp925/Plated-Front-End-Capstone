@@ -46,7 +46,7 @@ SingleViewRecipeCard.propTypes = {
     name: PropTypes.string,
     totalTime: PropTypes.string,
     preheat: PropTypes.string,
-    leftovers: PropTypes.bool,
+    leftovers: PropTypes.string,
     ingredients: PropTypes.string,
     directions: PropTypes.string,
   }),

@@ -4,13 +4,14 @@ import {
 import { deleteRecipe, getSingleRecipe } from './recipesData';
 
 // // GET RECIPE ON DINNER CARD
-const getRecipeOnDinnerCard = (dayId) => new Promise((resolve, reject) => {
-  getDinnersByDay(dayId).then((dinnerArray) => {
-    const recipeIdPromises = dinnerArray.map((dinners) => getSingleRecipe(dinners.recipeId));
-
-    Promise.all(recipeIdPromises).then((recipeArray) => {
-      resolve(recipeArray[0]);
-    });
+const getRecipeOnDinnerCard = (dayObj, uid) => new Promise((resolve, reject) => {
+  getDinnersByDay(dayObj.firebaseKey).then((dinnerArray) => {
+    const userDinnerObj = dinnerArray.find((dinnerObj) => dinnerObj.uid === uid);
+    if (!userDinnerObj) {
+      resolve({ dayObj, userDinnerObj });
+    } else {
+      getSingleRecipe(userDinnerObj.recipeId).then((recipeObj) => resolve({ dayObj, userDinnerObj, recipeObj }));
+    }
   })
     .catch(reject);
 });
