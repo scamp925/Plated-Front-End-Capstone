@@ -13,7 +13,7 @@ function Home() {
   const getSunThruSat = () => {
     getDaysOfTheWeek().then((daysArray) => {
       const dayPromises = daysArray.map((dayObj) => getRecipeOnDinnerCard(dayObj, user.uid));
-
+      console.warn('Hello');
       Promise.all(dayPromises).then(setDays);
     });
   };
