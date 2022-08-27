@@ -5,13 +5,14 @@ import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import RecipeCards from './RecipeCards';
+import { deleteDinnerCard } from '../../api/dinnersData';
 
-function DinnerCards({ dayCardInfo }) {
-  // const deleteThisDinnerCard = () => {
-  //   if (window.confirm(`Are you sure you want to clear ${dayObj.day}'s current meal? Click "OK" if you wish to continue.`)) {
-  //     deleteDinnerCard(dinnerObj?.firebaseKey)
-  //   }
-  // };
+function DinnerCards({ dayCardInfo, onUpdate }) {
+  const deleteThisDinnerCard = () => {
+    if (window.confirm(`Are you sure you want to clear ${dayCardInfo.dayObj.day}'s current meal? Click "OK" if you wish to continue.`)) {
+      deleteDinnerCard(dayCardInfo.userDinnerObj.firebaseKey).then(() => onUpdate());
+    }
+  };
 
   return (
     <div>
@@ -28,7 +29,7 @@ function DinnerCards({ dayCardInfo }) {
               <Card.Link href={`/dinners/edit/${dayCardInfo.userDinnerObj?.firebaseKey}`}>
                 <Button variant="info" className="edit-btn">Change Dinner</Button>
               </Card.Link>
-              {/* <Button variant="danger" className="delete-btn" onClick={deleteThisDinnerCard}>Clear Dinner</Button> */}
+              <Button variant="danger" className="delete-btn" onClick={deleteThisDinnerCard}>Clear Dinner</Button>
             </div>
           ) : (
             <Link href={`/dinners/new/${dayCardInfo.dayObj?.firebaseKey}`} passHref>
@@ -62,6 +63,7 @@ DinnerCards.propTypes = {
       recipeId: PropTypes.string,
     }),
   }),
+  onUpdate: PropTypes.func.isRequired,
 };
 
 DinnerCards.defaultProps = {

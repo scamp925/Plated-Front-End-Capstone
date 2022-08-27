@@ -13,7 +13,7 @@ function Home() {
   const getSunThruSat = () => {
     getDaysOfTheWeek().then((daysArray) => {
       const dayPromises = daysArray.map((dayObj) => getRecipeOnDinnerCard(dayObj, user.uid));
-      console.warn('Hello');
+
       Promise.all(dayPromises).then(setDays);
     });
   };
@@ -28,7 +28,7 @@ function Home() {
       <ClearTheWeek onUpdate={getSunThruSat} />
       <div className="days-container">
         {days?.map((day) => (
-          <DinnerCards key={day.dayObj.firebaseKey} dayCardInfo={day} />
+          <DinnerCards key={day.dayObj.firebaseKey} dayCardInfo={day} onUpdate={getSunThruSat} />
         ))}
       </div>
     </div>
