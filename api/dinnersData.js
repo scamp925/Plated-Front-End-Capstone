@@ -36,6 +36,15 @@ const getSingleDinnerCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET ARRAY OF USER'S DINNER CARDS' FIREBASEKEYS
+const getArrayOfFirebaseKey = (uid) => new Promise((resolve, reject) => {
+  getDinnerCards(uid).then((dinnersArray) => {
+    const dinnerCardPromises = dinnersArray.map((dinner) => dinner.firebaseKey);
+
+    Promise.all(dinnerCardPromises).then(resolve);
+  }).catch(reject);
+});
+
 // CREATE DINNER CARD
 const createDinnerCard = (newDinnerCardObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/dinners.json`, newDinnerCardObj)
@@ -62,20 +71,20 @@ const deleteDinnerCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// DELETE ALL DINNER CARDS
-const deleteDinnerCards = () => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/dinners.json`)
-    .then(resolve)
-    .catch(reject);
-});
+// DELETE ALL DINNER CARDS ASSOCIATED TO USER
+const clearAllDinners = (array) => new Promise((resolve, reject) => {
+  const arrayOfPromises = array.map((firebaseKey) => deleteDinnerCard(firebaseKey));
 
+  Promise.all(arrayOfPromises).then(resolve).catch(reject);
+});
 export {
   getDinnerCards,
   getDinnersByDay,
   getDinnersByRecipe,
   getSingleDinnerCard,
+  getArrayOfFirebaseKey,
   createDinnerCard,
   updateDinnerCard,
   deleteDinnerCard,
-  deleteDinnerCards,
+  clearAllDinners,
 };
