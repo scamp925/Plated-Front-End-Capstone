@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { getDaysOfTheWeek } from '../api/daysOfTheWeekData';
 import { getRecipeOnDinnerCard } from '../api/mergedData';
-import DinnerCards from '../components/cards/DinnerCards';
+import DinnerCards from '../components/cards/dinnerCards';
 import ClearTheWeek from '../components/features/ClearTheWeek';
 import { useAuth } from '../utils/context/authContext';
 
