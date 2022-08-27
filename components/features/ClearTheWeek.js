@@ -1,16 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import { clearAllDinners, getArrayOfFirebaseKey } from '../../api/dinnersData';
 import { useAuth } from '../../utils/context/authContext';
 
-export default function ClearTheWeek() {
+function ClearTheWeek({ onUpdate }) {
   const { user } = useAuth();
 
   const clearAllDinnersForTheWeek = () => {
     if (window.confirm('Are you sure you want to clear all dinners currently listed for this week? Click "OK" if you wish to continue.')) {
       getArrayOfFirebaseKey(user.uid).then((firebaseKeyArray) => {
         clearAllDinners(firebaseKeyArray);
-      });
+      }).then(() => onUpdate());
     }
   };
 
@@ -20,3 +21,9 @@ export default function ClearTheWeek() {
     </div>
   );
 }
+
+ClearTheWeek.propTypes = {
+  onUpdate: PropTypes.func.isRequired,
+};
+
+export default ClearTheWeek;
