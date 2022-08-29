@@ -24,7 +24,7 @@ function Home() {
 
   return (
     <div>
-      <h2>Dinners This Week</h2>
+      <h2 className="title mt-3">Dinners This Week</h2>
       <ClearTheWeek onUpdate={getSunThruSat} />
       <div className="cards-container">
         {days?.map((day) => (

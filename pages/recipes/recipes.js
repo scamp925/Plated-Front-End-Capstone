@@ -24,7 +24,7 @@ export default function UserRecipes() {
   return (
     <div>
       <header>
-        <h2>Your Recipes</h2>
+        <h2 className="title mt-3">Your Recipes</h2>
       </header>
       <Search recipes={recipes} setFilteredRecipes={setFilteredRecipes} />
       <section className="cards-container">

@@ -21,7 +21,7 @@ function Sidebar() {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
             <Link passHref href="/" onClick={toggleShow}>
-              Plated
+              <h1>Plated</h1>
             </Link>
           </Offcanvas.Title>
         </Offcanvas.Header>
@@ -29,12 +29,12 @@ function Sidebar() {
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
               <Link passHref href="/recipes/recipes">
-                Recipes
+                <h3>Recipes</h3>
               </Link>
             </li>
             <li className="nav-item">
               <Link passHref href="/recipes/new" onClick={toggleShow}>
-                Add Recipe
+                <h3>Add Recipe</h3>
               </Link>
             </li>
             <button type="button" className="btn btn-danger" onClick={signOut}>

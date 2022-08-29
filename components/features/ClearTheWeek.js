@@ -17,7 +17,7 @@ function ClearTheWeek({ onUpdate }) {
 
   return (
     <div>
-      <Button variant="secondary" onClick={clearAllDinnersForTheWeek}>Clear the Dinners for This Week</Button>
+      <Button variant="outline-light" onClick={clearAllDinnersForTheWeek}>Clear the Dinners for This Week</Button>
     </div>
   );
 }
