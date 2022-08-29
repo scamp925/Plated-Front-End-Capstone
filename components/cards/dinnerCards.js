@@ -26,9 +26,9 @@ function DinnerCards({ dayCardInfo, onUpdate }) {
         <footer>
           {dayCardInfo.userDinnerObj ? (
             <div className="edit-delete-footer">
-              <Card.Link href={`/dinners/edit/${dayCardInfo.userDinnerObj?.firebaseKey}`}>
+              <Link href={`/dinners/edit/${dayCardInfo.userDinnerObj?.firebaseKey}`} passHref>
                 <Button variant="info" className="edit-btn">Change Dinner</Button>
-              </Card.Link>
+              </Link>
               <Button variant="danger" className="delete-btn" onClick={deleteThisDinnerCard}>Clear Dinner</Button>
             </div>
           ) : (

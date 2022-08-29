@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 
 function RecipeCards({ recipeObj }) {
@@ -11,7 +12,7 @@ function RecipeCards({ recipeObj }) {
           <Card.Text>Total Time: {recipeObj?.totalTime}</Card.Text>
           <Card.Text>{recipeObj?.leftovers === true ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
           <Card.Text>{recipeObj?.preheat && 'Preheat Oven To:'} {recipeObj?.preheat}</Card.Text>
-          <Card.Link className="underline-link" href={`/recipes/${recipeObj?.firebaseKey}`}>View Details</Card.Link>
+          <Link className="underline-link" href={`/recipes/${recipeObj?.firebaseKey}`} passHref>View Details</Link>
         </Card.Body>
       </Card>
     </div>
