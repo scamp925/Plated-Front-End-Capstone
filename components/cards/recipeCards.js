@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 function RecipeCards({ recipeObj }) {
   return (
     <div>
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem' }} className="individual-cards">
         <Card.Body>
           <Card.Title>{recipeObj?.name}</Card.Title>
           <Card.Text>Total Time: {recipeObj?.totalTime}</Card.Text>

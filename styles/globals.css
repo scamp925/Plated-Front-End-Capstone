@@ -19,4 +19,16 @@ a {
 
 body {
   background-color: #f19c79;
+  color: #a44a3f;
+  /* background-color: #a44a3f; */
+  /* color: #f6f4d2; */
+}
+
+.cards-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.individual-cards {
+  margin: 5px;
 }

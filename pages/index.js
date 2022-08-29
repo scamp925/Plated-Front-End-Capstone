@@ -26,7 +26,7 @@ function Home() {
     <div>
       <h2>Dinners This Week</h2>
       <ClearTheWeek onUpdate={getSunThruSat} />
-      <div className="days-container">
+      <div className="cards-container">
         {days?.map((day) => (
           <DinnerCards key={day.dayObj.firebaseKey} dayCardInfo={day} onUpdate={getSunThruSat} />
         ))}
