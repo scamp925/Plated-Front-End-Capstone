@@ -55,6 +55,11 @@ h3 {
 .individual-cards {
   font-size: large;
   margin: 5px;
+  max-width: 100%;
+}
+
+.dinner {
+  padding: 0px 12px 10px 0px;
 }
 
 form {

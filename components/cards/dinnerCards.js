@@ -16,7 +16,7 @@ function DinnerCards({ dayCardInfo, onUpdate }) {
 
   return (
     <div>
-      <Card style={{ width: '18rem' }} className="individual-cards">
+      <Card style={{ width: '18rem' }} className="individual-cards dinner">
         <Card.Body>
           <Card.Title>{dayCardInfo.dayObj?.day}</Card.Title>
           {dayCardInfo.userDinnerObj && (
