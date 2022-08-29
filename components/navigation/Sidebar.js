@@ -9,6 +9,7 @@ function Sidebar() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const toggleShow = () => setShow((s) => !s);
 
   return (
     <>
@@ -19,7 +20,7 @@ function Sidebar() {
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-            <Link passHref href="/">
+            <Link passHref href="/" onClick={toggleShow}>
               Plated
             </Link>
           </Offcanvas.Title>
@@ -32,7 +33,7 @@ function Sidebar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link passHref href="/recipes/new">
+              <Link passHref href="/recipes/new" onClick={toggleShow}>
                 Add Recipe
               </Link>
             </li>
