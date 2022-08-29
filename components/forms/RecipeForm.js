@@ -41,7 +41,7 @@ function RecipeForm({ recipeObj }) {
     } else {
       const payload = { ...formInput, uid: user.uid };
       createRecipe(payload).then(() => {
-        router.push('/recipes/recipes');
+        router.push('/recipes/index');
       });
     }
   };

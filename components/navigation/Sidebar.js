@@ -27,7 +27,7 @@ function Sidebar() {
         <Offcanvas.Body>
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <Link passHref href="/recipes/recipes">
+              <Link passHref href="/recipes/index">
                 Recipes
               </Link>
             </li>
