@@ -40,6 +40,13 @@ h2 {
 h3 {
   font-size: xx-large;
 }
+
+.to-the-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
 .cards-container {
   display: flex;
   flex-flow: row wrap;
