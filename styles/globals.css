@@ -30,6 +30,8 @@ h1 {
 }
 
 h2 {
+  display: flex;
+  justify-content: center;
   color: #f8f9fa;
   font-size: xx-large;
   font-weight: bold;
