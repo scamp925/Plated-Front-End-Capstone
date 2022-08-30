@@ -19,6 +19,8 @@ a {
 
 body {
   background-color: #f19c79;
+  background-image: url(../image/pngegg.png);
+  background-repeat: no-repeat;
   color: #a44a3f;
 }
 
@@ -40,7 +42,9 @@ h3 {
 }
 
 /* SIGN IN */
+/* .sign-in-logo {
 
+} */
 /* NAVBAR */
 .hamburger {
   margin-left: 10px;
