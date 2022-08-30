@@ -58,8 +58,22 @@ h3 {
   max-width: 100%;
 }
 
+.name-of-day {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .dinner {
   padding: 0px 12px 10px 0px;
+}
+
+.edit-delete-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px
 }
 
 form {
