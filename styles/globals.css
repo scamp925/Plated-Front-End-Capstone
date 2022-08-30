@@ -20,8 +20,6 @@ a {
 body {
   background-color: #f19c79;
   color: #a44a3f;
-  /* background-color: #a44a3f; */
-  /* color: #f6f4d2; */
 }
 
 h1 {
@@ -39,6 +37,15 @@ h2 {
 
 h3 {
   font-size: xx-large;
+}
+
+.hamburger {
+  margin-left: 10px;
+}
+
+.plated {
+  margin-top: 10px;
+  margin-left: 50px;
 }
 
 .to-the-right {
