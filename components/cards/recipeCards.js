@@ -12,7 +12,9 @@ function RecipeCards({ recipeObj }) {
           <Card.Text>Total Time: {recipeObj?.totalTime}</Card.Text>
           <Card.Text>{recipeObj?.leftovers === true ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
           <Card.Text>{recipeObj?.preheat && 'Preheat Oven To:'} {recipeObj?.preheat}</Card.Text>
-          <Link className="underline-link" href={`/recipes/${recipeObj?.firebaseKey}`} passHref>View Details</Link>
+          <div className="underline-link">
+            <Link href={`/recipes/${recipeObj?.firebaseKey}`} passHref>View Details</Link>
+          </div>
         </Card.Body>
       </Card>
     </div>
