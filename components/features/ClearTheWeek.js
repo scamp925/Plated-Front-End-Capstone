@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
@@ -17,7 +18,7 @@ function ClearTheWeek({ onUpdate }) {
 
   return (
     <div className="to-the-right">
-      <Button variant="outline-light" onClick={clearAllDinnersForTheWeek}>Clear the Dinners for This Week</Button>
+      <Button variant="outline-light" className="clear-all-btn" onClick={clearAllDinnersForTheWeek}>Clear All the Week's Dinners</Button>
     </div>
   );
 }

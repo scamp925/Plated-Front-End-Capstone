@@ -47,6 +47,10 @@ h3 {
   margin-bottom: 5px;
 }
 
+.clear-all-btn {
+  font-size: x-large;
+}
+
 .cards-container {
   display: flex;
   flex-flow: row wrap;
