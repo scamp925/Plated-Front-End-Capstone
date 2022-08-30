@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { getRecipes, getSingleRecipe } from '../../api/recipesData';
-import SingleViewRecipeCard from '../../components/cards/SingleViewRecipeCard';
+import SingleViewRecipeCard from '../../components/cards/singleViewRecipeCard';
 import { useAuth } from '../../utils/context/authContext';
 
 export default function ViewSingleRecipe() {
@@ -24,7 +24,7 @@ export default function ViewSingleRecipe() {
   }, []);
 
   return (
-    <div>
+    <div className="single-recipe-view">
       <SingleViewRecipeCard recipeObj={singleRecipe} onUpdate={getAllTheRecipes} />
     </div>
   );

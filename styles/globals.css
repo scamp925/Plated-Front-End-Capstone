@@ -99,6 +99,19 @@ h3 {
   text-decoration: underline;
 }
 
+/* SINGLE VIEW OF RECIPE */
+.single-recipe-view {
+  margin: 30px 0px;
+}
+
+.single-recipe-title {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: underline;
+}
+
 form {
   font-size: large;
 }
