@@ -6,8 +6,8 @@ import Sidebar from './Sidebar';
 export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light">
+      <Sidebar />
       <div className="container-fluid">
-        <Sidebar />
         <Link passHref href="/">
           <h1>Plated</h1>
         </Link>

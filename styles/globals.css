@@ -84,7 +84,7 @@ h3 {
 .edit-delete-footer {
   display: flex;
   justify-content: center;
-  gap: 10px
+  gap: 10px;
 }
 
 /* RECIPE CARDS */
@@ -110,6 +110,22 @@ h3 {
   margin-top: 10px;
   text-align: center;
   text-decoration: underline;
+}
+
+.recipe-details {
+  font-size: larger;
+}
+
+.box-around-input {
+  border: #a44a3f solid 1px;
+  padding: 5px 15px;
+}
+
+.single-view-edit-and-delete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
 }
 
 form {
