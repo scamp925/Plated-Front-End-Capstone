@@ -62,6 +62,7 @@ h3 {
   max-width: 100%;
 }
 
+/* DAY/DINNER CARDS */
 .name-of-day {
   display: flex;
   justify-content: center;
@@ -87,6 +88,11 @@ h3 {
 }
 
 /* RECIPE CARDS */
+.recipe-title {
+  font-size: x-large;
+  font-weight: bold;
+}
+
 .underline-link {
   display: flex;
   justify-content: center;

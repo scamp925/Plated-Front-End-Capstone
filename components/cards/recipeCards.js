@@ -8,7 +8,7 @@ function RecipeCards({ recipeObj }) {
     <div>
       <Card style={{ width: '18rem' }} className="individual-cards">
         <Card.Body>
-          <Card.Title>{recipeObj?.name}</Card.Title>
+          <Card.Title className="recipe-title">{recipeObj?.name}</Card.Title>
           <Card.Text>Total Time: {recipeObj?.totalTime}</Card.Text>
           <Card.Text>{recipeObj?.leftovers === true ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
           <Card.Text>{recipeObj?.preheat && 'Preheat Oven To:'} {recipeObj?.preheat}</Card.Text>
