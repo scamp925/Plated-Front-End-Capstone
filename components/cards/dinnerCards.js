@@ -32,9 +32,11 @@ function DinnerCards({ dayCardInfo, onUpdate }) {
               <Button variant="danger" className="delete-btn" onClick={deleteThisDinnerCard}>Clear Dinner</Button>
             </div>
           ) : (
-            <Link href={`/dinners/new/${dayCardInfo.dayObj?.firebaseKey}`} passHref>
-              <Button variant="success" className="add-btn">Add</Button>
-            </Link>
+            <div className="add-btn">
+              <Link href={`/dinners/new/${dayCardInfo.dayObj?.firebaseKey}`} passHref>
+                <Button variant="success">Add</Button>
+              </Link>
+            </div>
           )}
         </footer>
       </Card>

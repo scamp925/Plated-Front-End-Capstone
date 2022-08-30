@@ -74,6 +74,12 @@ h3 {
   padding: 0px 12px 10px 0px;
 }
 
+.add-btn {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0px 105px 0px ;
+}
+
 .edit-delete-footer {
   display: flex;
   justify-content: center;
