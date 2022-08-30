@@ -39,6 +39,9 @@ h3 {
   font-size: xx-large;
 }
 
+/* SIGN IN */
+
+/* NAVBAR */
 .hamburger {
   margin-left: 10px;
 }
@@ -48,6 +51,7 @@ h3 {
   margin-left: 50px;
 }
 
+/* CLEAR THE WEEK BUTTON */
 .to-the-right {
   display: flex;
   justify-content: flex-end;
@@ -58,6 +62,7 @@ h3 {
   font-size: x-large;
 }
 
+/* DAY/DINNER/RECIPE CARDS */
 .cards-container {
   display: flex;
   flex-flow: row wrap;
@@ -85,7 +90,7 @@ h3 {
 .add-btn {
   display: flex;
   justify-content: center;
-  padding: 80px 0px 105px 0px ;
+  padding: 82px 0px 107px 0px ;
 }
 
 .edit-delete-footer {
@@ -135,6 +140,19 @@ h3 {
   margin-top: 30px;
 }
 
+/* DINNER AND RECIPE FORMS */
 form {
   font-size: large;
+}
+
+label {
+  font-weight: bold;
+}
+
+.note {
+  color: #f6f4d2;
+}
+
+.yes-option {
+  margin-left: 10px;
 }
