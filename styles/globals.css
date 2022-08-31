@@ -43,13 +43,6 @@ h3 {
   font-size: xx-large;
 }
 
-/* SIGN IN */
-.sign-in-logo {
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-}
-
 /* CLEAR THE WEEK BUTTON */
 .to-the-right {
   display: flex;

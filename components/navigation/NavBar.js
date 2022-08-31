@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { signOut } from '../../utils/auth';
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,9 @@ export default function NavBar() {
       {[false].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
-            <Navbar.Brand href="/"><h1>Plated</h1></Navbar.Brand>
+            <Link passHref href="/">
+              <h1>Plated</h1>
+            </Link>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} onClick={toggleMenu} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -45,6 +48,9 @@ export default function NavBar() {
                   <Link passHref href="/recipes/new" onClick={toggleMenu}>
                     <h3>Add Recipe</h3>
                   </Link>
+                  <button type="button" className="btn btn-danger" onClick={signOut}>
+                    Sign Out
+                  </button>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
