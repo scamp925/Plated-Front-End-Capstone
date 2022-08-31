@@ -19,7 +19,7 @@ a {
 
 body {
   background-color: #f19c79;
-  background-image: url(../image/pngegg-mobile.png);
+  background-image: url(../images/pngegg-mobile.png);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -44,9 +44,12 @@ h3 {
 }
 
 /* SIGN IN */
-/* .sign-in-logo {
+.sign-in-logo {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
 
-} */
 /* NAVBAR */
 .hamburger {
   margin-left: 10px;
