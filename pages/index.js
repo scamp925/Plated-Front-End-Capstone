@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { getDaysOfTheWeek } from '../api/daysOfTheWeekData';
+import getDaysOfTheWeek from '../api/daysOfTheWeekData';
 import { getRecipeOnDinnerCard } from '../api/mergedData';
 import DinnerCards from '../components/cards/dinnerCards';
 import ClearTheWeek from '../components/features/ClearTheWeek';
