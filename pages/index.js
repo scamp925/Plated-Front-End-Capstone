@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { getDaysOfTheWeek } from '../api/daysOfTheWeekData';
@@ -24,9 +25,9 @@ function Home() {
 
   return (
     <div>
-      <h2>Dinners This Week</h2>
+      <h2 className="title mt-3">This Week's Dinners</h2>
       <ClearTheWeek onUpdate={getSunThruSat} />
-      <div className="days-container">
+      <div className="cards-container">
         {days?.map((day) => (
           <DinnerCards key={day.dayObj.firebaseKey} dayCardInfo={day} onUpdate={getSunThruSat} />
         ))}

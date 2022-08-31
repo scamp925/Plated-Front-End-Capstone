@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 
 function RecipeCards({ recipeObj }) {
   return (
     <div>
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem' }} className="individual-cards">
         <Card.Body>
-          <Card.Title>{recipeObj?.name}</Card.Title>
+          <Card.Title className="recipe-title">{recipeObj?.name}</Card.Title>
           <Card.Text>Total Time: {recipeObj?.totalTime}</Card.Text>
           <Card.Text>{recipeObj?.leftovers === true ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
           <Card.Text>{recipeObj?.preheat && 'Preheat Oven To:'} {recipeObj?.preheat}</Card.Text>
-          <Card.Link className="underline-link" href={`/recipes/${recipeObj?.firebaseKey}`}>View Details</Card.Link>
+          <div className="underline-link">
+            <Link href={`/recipes/${recipeObj?.firebaseKey}`} passHref>View Details</Link>
+          </div>
         </Card.Body>
       </Card>
     </div>

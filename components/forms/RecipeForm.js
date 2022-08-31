@@ -48,7 +48,7 @@ function RecipeForm({ recipeObj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h1 className="title mt-5">{recipeObj?.firebaseKey ? 'Update' : 'Add'} a Recipe</h1>
+      <h2 className="title mt-3">{recipeObj?.firebaseKey ? 'Update' : 'Add'} a Recipe</h2>
       <div className="margin-top" />
       <Form.Group className="mb-3" controlId="formBasicInput">
         <Form.Label>Name of Recipe</Form.Label>
@@ -60,8 +60,8 @@ function RecipeForm({ recipeObj }) {
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicInput">
         <Form.Label>Preheat Oven To</Form.Label>
-        <Form.Text className="text-muted">Leave blank if a preheat is not needed</Form.Text>
         <Form.Control type="text" placeholder="e.g. 350 degrees" name="preheat" value={formInput.preheat} onChange={handleChange} />
+        <Form.Text className="note">**Leave blank if a preheat is not needed</Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Ingredients</Form.Label>
@@ -75,6 +75,7 @@ function RecipeForm({ recipeObj }) {
         <div key={`inline-${type}`} className="mb-3">
           <Form.Label className="leftovers">Leftovers?</Form.Label>
           <Form.Check
+            className="yes-option"
             inline
             label="Yes"
             name="leftovers"

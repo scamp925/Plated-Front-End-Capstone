@@ -6,10 +6,10 @@ import Sidebar from './Sidebar';
 export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light">
-      <div className="container-fluid">
+      <div className="container-fluid justify-content-start">
         <Sidebar />
         <Link passHref href="/">
-          <h1>Plated</h1>
+          <h1 className="plated">Plated</h1>
         </Link>
       </div>
     </nav>

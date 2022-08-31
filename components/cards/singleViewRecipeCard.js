@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -20,18 +21,22 @@ function SingleViewRecipeCard({ recipeObj, onUpdate }) {
     <div>
       <Card>
         <Card.Body>
-          <Card.Title>{recipeObj.name}</Card.Title>
-          <Card.Text>Total Time: {recipeObj.totalTime}</Card.Text>
-          <Card.Text>{recipeObj.leftovers === true ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
-          <Card.Text>{recipeObj.preheat && 'Preheat Oven To:'} {recipeObj.preheat}</Card.Text>
-          <Card.Text>{recipeObj.ingredients && 'Ingredients'}</Card.Text>
-          <Card.Text className="box-around-input">{recipeObj.ingredients}</Card.Text>
-          <Card.Text>{recipeObj.directions && 'Directions'}</Card.Text>
-          <Card.Text className="box-around-input">{recipeObj.directions}</Card.Text>
-          <footer className="edit-delete-footer">
-            <Card.Link href={`/recipes/edit/${recipeObj.firebaseKey}`}>
+          <header>
+            <Card.Title className="single-recipe-title">{recipeObj.name}</Card.Title>
+          </header>
+          <section className="recipe-details">
+            <Card.Text>Total Time: {recipeObj.totalTime}</Card.Text>
+            <Card.Text>{recipeObj.leftovers === true ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
+            <Card.Text>{recipeObj.preheat && 'Preheat Oven To:'} {recipeObj.preheat}</Card.Text>
+            <Card.Text>{recipeObj.ingredients && 'Ingredients:'}</Card.Text>
+            <Card.Text className="box-around-input">{recipeObj.ingredients}</Card.Text>
+            <Card.Text>{recipeObj.directions && 'Directions:'}</Card.Text>
+            <Card.Text className="box-around-input">{recipeObj.directions}</Card.Text>
+          </section>
+          <footer className="single-view-edit-and-delete-buttons">
+            <Link href={`/recipes/edit/${recipeObj.firebaseKey}`} passHref>
               <Button variant="info" className="edit-btn">Edit</Button>
-            </Card.Link>
+            </Link>
             <Button variant="danger" className="delete-btn" onClick={deleteThisRecipe}>Delete</Button>
           </footer>
         </Card.Body>

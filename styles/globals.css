@@ -1,11 +1,11 @@
 @import 'bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Handlee', cursive;
 }
 
 a {
@@ -18,5 +18,150 @@ a {
 }
 
 body {
-  background-color: #88effd;
+  background-color: #f19c79;
+  background-image: url(../images/pngegg-mobile.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #a44a3f;
+}
+
+h1 {
+  font-size: xxx-large;
+  font-weight: bold;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  color: #f8f9fa;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: xx-large;
+}
+
+/* SIGN IN */
+.sign-in-logo {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+/* NAVBAR */
+.hamburger {
+  margin-left: 10px;
+}
+
+.plated {
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+/* CLEAR THE WEEK BUTTON */
+.to-the-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.clear-all-btn {
+  font-size: x-large;
+}
+
+/* DAY/DINNER/RECIPE CARDS */
+.cards-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.individual-cards {
+  font-size: large;
+  margin: 5px;
+  max-width: 100%;
+}
+
+/* DAY/DINNER CARDS */
+.name-of-day {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.dinner {
+  padding: 0px 12px 10px 0px;
+}
+
+.add-btn {
+  display: flex;
+  justify-content: center;
+  padding: 82px 0px 107px 0px ;
+}
+
+.edit-delete-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* RECIPE CARDS */
+.recipe-title {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.underline-link {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+/* SINGLE VIEW OF RECIPE */
+.single-recipe-view {
+  margin: 30px 0px;
+}
+
+.single-recipe-title {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.recipe-details {
+  font-size: larger;
+}
+
+.box-around-input {
+  border: #a44a3f solid 1px;
+  padding: 5px 15px;
+}
+
+.single-view-edit-and-delete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+/* DINNER AND RECIPE FORMS */
+form {
+  font-size: large;
+}
+
+label {
+  font-weight: bold;
+}
+
+.note {
+  color: #f6f4d2;
+}
+
+.yes-option {
+  margin-left: 10px;
 }
