@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -29,9 +30,9 @@ function SingleViewRecipeCard({ recipeObj, onUpdate }) {
           <Card.Text>{recipeObj.directions && 'Directions'}</Card.Text>
           <Card.Text className="box-around-input">{recipeObj.directions}</Card.Text>
           <footer className="edit-delete-footer">
-            <Card.Link href={`/recipes/edit/${recipeObj.firebaseKey}`}>
+            <Link href={`/recipes/edit/${recipeObj.firebaseKey}`} passHref>
               <Button variant="info" className="edit-btn">Edit</Button>
-            </Card.Link>
+            </Link>
             <Button variant="danger" className="delete-btn" onClick={deleteThisRecipe}>Delete</Button>
           </footer>
         </Card.Body>

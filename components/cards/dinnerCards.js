@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import RecipeCards from './RecipeCards';
+import RecipeCards from './recipeCards';
 import { deleteDinnerCard } from '../../api/dinnersData';
 
 function DinnerCards({ dayCardInfo, onUpdate }) {
@@ -26,9 +26,9 @@ function DinnerCards({ dayCardInfo, onUpdate }) {
         <footer>
           {dayCardInfo.userDinnerObj ? (
             <div className="edit-delete-footer">
-              <Card.Link href={`/dinners/edit/${dayCardInfo.userDinnerObj?.firebaseKey}`}>
+              <Link href={`/dinners/edit/${dayCardInfo.userDinnerObj?.firebaseKey}`} passHref>
                 <Button variant="info" className="edit-btn">Change Dinner</Button>
-              </Card.Link>
+              </Link>
               <Button variant="danger" className="delete-btn" onClick={deleteThisDinnerCard}>Clear Dinner</Button>
             </div>
           ) : (
