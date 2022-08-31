@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Link from 'next/link';
@@ -9,7 +9,9 @@ function Sidebar() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const toggleShow = () => setShow((s) => !s);
+  // const toggleShow = () => setShow((s) => !s);
+  const offCanvasRef = useRef();
+  const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
 
   return (
     <>
@@ -20,7 +22,7 @@ function Sidebar() {
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-            <Link passHref href="/" onClick={toggleShow}>
+            <Link passHref href="/" onClick={closeOffCanvas}>
               <h1>Plated</h1>
             </Link>
           </Offcanvas.Title>
@@ -28,12 +30,12 @@ function Sidebar() {
         <Offcanvas.Body>
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <Link passHref href="/recipes/recipes">
+              <Link passHref href="/recipes/recipes" onClick={closeOffCanvas}>
                 <h3>Recipes</h3>
               </Link>
             </li>
             <li className="nav-item">
-              <Link passHref href="/recipes/new" onClick={toggleShow}>
+              <Link passHref href="/recipes/new" onClick={closeOffCanvas}>
                 <h3>Add Recipe</h3>
               </Link>
             </li>
