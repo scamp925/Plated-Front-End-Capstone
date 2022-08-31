@@ -16,27 +16,4 @@ const getDaysOfTheWeek = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// CREATE DAY OF THE WEEK
-const createDayOfTheWeek = (newDayObj) => new Promise((resolve, reject) => {
-  axios.post(`${dbUrl}/daysOfTheWeek.json`, newDayObj)
-    .then((response) => {
-      const body = { firebaseKey: response.data.name };
-      axios.patch(`${dbUrl}/daysOfTheWeek/${response.data.name}.json`, body).then(() => {
-        getDaysOfTheWeek(newDayObj.uid).then(resolve);
-      });
-    })
-    .catch(reject);
-});
-
-// UPDATE DAY OF THE WEEK
-const updateDayOfTheWeek = (dayObj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/daysOfTheWeek/${dayObj.firebaseKey}.json`, dayObj)
-    .then(resolve)
-    .catch(reject);
-});
-
-export {
-  getDaysOfTheWeek,
-  createDayOfTheWeek,
-  updateDayOfTheWeek,
-};
+export default getDaysOfTheWeek;

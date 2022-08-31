@@ -43,23 +43,6 @@ h3 {
   font-size: xx-large;
 }
 
-/* SIGN IN */
-.sign-in-logo {
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-}
-
-/* NAVBAR */
-.hamburger {
-  margin-left: 10px;
-}
-
-.plated {
-  margin-top: 10px;
-  margin-left: 50px;
-}
-
 /* CLEAR THE WEEK BUTTON */
 .to-the-right {
   display: flex;
