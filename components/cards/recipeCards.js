@@ -10,7 +10,7 @@ function RecipeCards({ recipeObj }) {
         <Card.Body>
           <Card.Title>{recipeObj?.name}</Card.Title>
           <Card.Text>Total Time: {recipeObj?.totalTime}</Card.Text>
-          <Card.Text>{recipeObj?.leftovers === true ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
+          <Card.Text>{recipeObj?.leftovers === 'Yes' ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
           <Card.Text>{recipeObj?.preheat && 'Preheat Oven To:'} {recipeObj?.preheat}</Card.Text>
           <Link href={`/recipes/${recipeObj?.firebaseKey}`} passHref>View Details</Link>
         </Card.Body>
