@@ -63,7 +63,7 @@ h3 {
 /* CLEAR THE WEEK BUTTON */
 .to-the-right {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-bottom: 5px;
 }
 
@@ -75,6 +75,7 @@ h3 {
 .cards-container {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 
 .individual-cards {
