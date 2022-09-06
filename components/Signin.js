@@ -24,7 +24,6 @@ function Signin() {
         onClick={signIn}
         style={{
           margin: '490px 0px 0px 160px',
-          color: 'white',
           position: 'fixed',
         }}
       >
