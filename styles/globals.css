@@ -43,6 +43,30 @@ h3 {
   font-size: xx-large;
 }
 
+/* SIGN IN PAGE */
+.sign-in-container {
+  height: 400px;
+  width: 400px;
+  position: relative;
+}
+
+.plated-img {
+  position: absolute;
+  left: 5px;
+  top: 250px;
+}
+
+.overlay-on-img {
+  z-index: 100;
+  position: absolute;
+  left: 114px;
+  top: 310px;
+}
+
+.welcome-header {
+  text-align: center;
+}
+
 /* CLEAR THE WEEK BUTTON */
 .to-the-right {
   display: flex;
