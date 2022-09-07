@@ -92,6 +92,11 @@ h3 {
   gap: 10px;
 }
 
+/* ADD A RECIPE BUTTON ON RECIPE PAGE */
+.add-recipe-btn {
+  font-size: larger;
+}
+
 /* RECIPE CARDS */
 .recipe-title {
   font-size: x-large;

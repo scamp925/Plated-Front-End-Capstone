@@ -1,5 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
 import { getRecipes } from '../../api/recipesData';
 import RecipeCards from '../../components/cards/recipeCards';
 import Search from '../../components/features/Search';
@@ -25,6 +27,11 @@ export default function UserRecipes() {
     <div>
       <header>
         <h2 className="title mt-3">Your Recipes</h2>
+        <div className="text-center my-4">
+          <Link href="/recipes/new" passHref>
+            <Button variant="outline-light" className="add-recipe-btn">Add a Recipe</Button>
+          </Link>
+        </div>
       </header>
       <Search recipes={recipes} setFilteredRecipes={setFilteredRecipes} />
       <section className="cards-container">
