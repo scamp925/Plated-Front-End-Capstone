@@ -127,6 +127,11 @@ h3 {
   white-space: pre;
 }
 
+.ingredients {
+  column-count: 3;
+  text-align: center;
+}
+
 .single-view-edit-and-delete-buttons {
   display: flex;
   justify-content: center;
@@ -143,8 +148,11 @@ label {
   font-weight: bold;
 }
 
+/* RECIPE FORM */
 .note {
-  color: #f6f4d2;
+  color: #f8f9fa;
+  font-size: 78%;
+  margin-left: 20px;
 }
 
 .yes-option {
