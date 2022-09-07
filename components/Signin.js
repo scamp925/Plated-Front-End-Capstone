@@ -18,7 +18,7 @@ function Signin() {
         }}
       >Welcome to Plated
       </h1>
-      <Image src="/images/pngegg-mobile.png" alt="Plate with fork and knife" layout="fill" />
+      <Image src="/pngegg-mobile.png" alt="Plate with fork and knife" width="700" height="615" />
       <button
         type="button"
         className="btn btn-outline-light btn-lg copy-btn"
