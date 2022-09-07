@@ -19,7 +19,7 @@ a {
 
 body {
   background-color: #f19c79;
-  background-image: url(../images/pngegg-mobile.png);
+  /* background-image: url(../images/pngegg-mobile.png); */
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;

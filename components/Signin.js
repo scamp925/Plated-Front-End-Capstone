@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import Image from 'next/image';
 import { signIn } from '../utils/auth';
 
 function Signin() {
@@ -17,7 +18,7 @@ function Signin() {
         }}
       >Welcome to Plated
       </h1>
-      {/* <img src="../images/pngegg-mobile.png" alt="Plate with fork and knife" /> */}
+      <Image src="/images/pngegg-mobile.png" alt="Plate with fork and knife" layout="fill" />
       <button
         type="button"
         className="btn btn-outline-light btn-lg copy-btn"
