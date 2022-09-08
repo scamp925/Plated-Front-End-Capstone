@@ -19,7 +19,7 @@ a {
 
 body {
   background-color: #f19c79;
-  background-image: url(../images/pngegg-mobile.png);
+  /* background-image: url(../images/pngegg-mobile.png); */
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -43,10 +43,29 @@ h3 {
   font-size: xx-large;
 }
 
+/* SIGN IN PAGE */
+.sign-in-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.sign-in-container div {
+  position: absolute;
+  width: 22%;
+  top: 256px;
+  text-align: center;
+}
+
+.welcome-header {
+  display: flex;
+  justify-content: center;
+}
+
 /* CLEAR THE WEEK BUTTON */
 .to-the-right {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-bottom: 5px;
 }
 
@@ -58,6 +77,7 @@ h3 {
 .cards-container {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 
 .individual-cards {
@@ -89,6 +109,11 @@ h3 {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+/* ADD A RECIPE BUTTON ON RECIPE PAGE */
+.add-recipe-btn {
+  font-size: larger;
 }
 
 /* RECIPE CARDS */
@@ -123,6 +148,12 @@ h3 {
 .box-around-input {
   border: #a44a3f solid 1px;
   padding: 5px 15px;
+  white-space: pre;
+}
+
+.ingredients {
+  column-count: 3;
+  text-align: center;
 }
 
 .single-view-edit-and-delete-buttons {
@@ -141,8 +172,11 @@ label {
   font-weight: bold;
 }
 
+/* RECIPE FORM */
 .note {
-  color: #f6f4d2;
+  color: #f8f9fa;
+  font-size: 78%;
+  margin-left: 20px;
 }
 
 .yes-option {

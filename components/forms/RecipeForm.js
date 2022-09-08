@@ -60,15 +60,17 @@ function RecipeForm({ recipeObj }) {
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicInput">
         <Form.Label>Preheat Oven To</Form.Label>
-        <Form.Control type="text" placeholder="e.g. 350 degrees" name="preheat" value={formInput.preheat} onChange={handleChange} />
         <Form.Text className="note">**Leave blank if a preheat is not needed</Form.Text>
+        <Form.Control type="text" placeholder="e.g. 350 degrees" name="preheat" value={formInput.preheat} onChange={handleChange} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Ingredients</Form.Label>
+        <Form.Text className="note">**Please hit enter after every ingredient</Form.Text>
         <Form.Control as="textarea" rows={3} type="text" placeholder="List recipe's ingredients here" name="ingredients" value={formInput.ingredients} onChange={handleChange} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Directions</Form.Label>
+        <Form.Text className="note">**Please hit enter after every step in the directions</Form.Text>
         <Form.Control as="textarea" rows={3} type="text" placeholder="List recipe's directions here" name="directions" value={formInput.directions} onChange={handleChange} />
       </Form.Group>
       {['radio'].map((type) => (
