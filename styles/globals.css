@@ -148,7 +148,7 @@ h3 {
 .box-around-input {
   border: #a44a3f solid 1px;
   padding: 5px 15px;
-  white-space: pre;
+  white-space: pre-line;
 }
 
 .ingredients {
