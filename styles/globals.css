@@ -45,26 +45,21 @@ h3 {
 
 /* SIGN IN PAGE */
 .sign-in-container {
-  height: 400px;
-  width: 400px;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
-.plated-img {
+.sign-in-container div {
   position: absolute;
-  left: 5px;
-  top: 250px;
-}
-
-.overlay-on-img {
-  z-index: 100;
-  position: absolute;
-  left: 114px;
-  top: 310px;
+  width: 22%;
+  top: 256px;
+  text-align: center;
 }
 
 .welcome-header {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* CLEAR THE WEEK BUTTON */

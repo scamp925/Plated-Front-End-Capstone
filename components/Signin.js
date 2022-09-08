@@ -6,15 +6,12 @@ import { signIn } from '../utils/auth';
 function Signin() {
   return (
     <div className="sign-in-container">
-      <div className="plated-img">
-        <Image src="/pngegg-mobile.png" alt="Plate with fork and knife" width="740" height="615" />
-      </div>
+      <Image src="/pngegg-mobile.png" alt="Plate with fork and knife" width="740" height="615" />
       <div className="overlay-on-img">
-        <h1 className="welcome-header">Welcome to Plated
-        </h1>
+        <h1 className="welcome-header">Welcome to Plated</h1>
         <button
           type="button"
-          className="btn btn-outline-light btn-lg copy-btn sign-in-btn"
+          className="btn btn-outline-light btn-lg copy-btn"
           onClick={signIn}
         >
           Sign In
