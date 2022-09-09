@@ -2,6 +2,8 @@
 
 [See Live Demo of Plated](https://drt-next-js-template.netlify.app/)
 
+[MVP Walkthrough Video of Plated](https://www.loom.com/share/03426504f24b464fbf3173efa2a3dc09)
+
 ![plated](https://user-images.githubusercontent.com/98675776/189264541-3c4b2291-8177-4b83-9721-4f1f9705a794.png)
 
 ## Topics
