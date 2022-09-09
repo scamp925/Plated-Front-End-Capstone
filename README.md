@@ -36,3 +36,6 @@ Days of the Week Calendar:
 - "Change Dinner" button brings the dinner form back with previous selection rendering ready to be changed to another meal.
 - "Clear Dinner" button deletes the dinner entry, but not the recipe that was there. Once dinner entry is cleared, the day of the week card reverts back to an "Add" button in the center.
 - "Clear the Week's Dinners" above the calendar of the week works like the "Clear Dinner" button except instead of clearing just one dinner entry, clicking this button will clear all dinner entries for the week. Great feature when it's time to sit down and plan the upcoming week's dinners.
+
+General:
+- All Plated users are authenticated at sign-in thanks to Google Firebase, so everything done by a user on Plated will never change anything on another user's view/account.
