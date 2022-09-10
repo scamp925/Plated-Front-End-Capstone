@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
+import Select from 'react-select';
+// import Async, { useAsync } from 'react-select/async';
+// import Creatable from 'react-select/creatable';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
@@ -66,6 +69,7 @@ function DinnerForm({ dinnerObj, dayId }) {
             ))
           }
       </Form.Select>
+      <Select options={recipeForDinner} />
       <Button type="submit" variant="success" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
     </Form>
   );
