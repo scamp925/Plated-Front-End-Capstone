@@ -38,10 +38,10 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
 
   const loadOptions = (searchValue, callback) => {
     setTimeout(() => {
-      const filteredOptions = recipeForDinner.filter((recipeOption) => recipeOption.name.toLowerCase().includes(searchValue.toLowerCase()));
+      const filteredOptions = recipeForDinner.filter((recipeOption) => recipeOption.label.toLowerCase().includes(searchValue.toLowerCase()));
       console.warn('loadOptions', searchValue, filteredOptions);
       callback(filteredOptions);
-    }, 2000);
+    }, 500);
   };
 
   useEffect(() => {
@@ -75,7 +75,7 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
       <h2 className="title mt-5">{dinnerObj?.firebaseKey ? 'Update' : 'Select'} a Meal for Dinner</h2>
       <AsyncSelect
         // cacheOptions
-        defaultOptions
+        defaultOptions={recipeForDinner}
         loadOptions={loadOptions}
         onChange={handleChange}
       />
