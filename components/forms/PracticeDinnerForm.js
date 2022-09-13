@@ -22,15 +22,14 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
   const router = useRouter();
   const { user } = useAuth();
 
-  const handleChange = (selectedOptions) => {
-    console.warn('handle change', selectedOptions);
-  };
+  const handleChange = (selectedOptions) => selectedOptions.recipeId;
 
   const recipeOptions = () => {
     getRecipes(user.uid).then((recipeArray) => {
       const recipeName = recipeArray.map((recipe) => ({
         name: recipe.name,
         label: recipe.name,
+        recipeId: recipe.firebaseKey,
       }));
       setRecipeForDinner(recipeName);
     });
