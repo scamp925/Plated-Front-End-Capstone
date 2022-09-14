@@ -76,7 +76,7 @@ DinnerForm.propTypes = {
     firebaseKey: PropTypes.string,
     recipeId: PropTypes.string,
   }),
-  dayId: PropTypes.string.isRequired,
+  dayId: PropTypes.string,
 };
 
 DinnerForm.defaultProps = {
@@ -84,6 +84,7 @@ DinnerForm.defaultProps = {
     firebaseKey: '',
     recipeId: '',
   },
+  dayId: '',
 };
 
 export default DinnerForm;
