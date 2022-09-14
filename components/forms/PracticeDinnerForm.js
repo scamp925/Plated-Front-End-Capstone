@@ -18,11 +18,8 @@ const initialState = {
 function PracticeDinnerForm({ dinnerObj, dayId }) {
   const [recipeForDinner, setRecipeForDinner] = useState([]);
   const [formInput, setFormInput] = useState(initialState);
-  // const [selectedValue, setSelectedValue] = useState(null);
   const router = useRouter();
   const { user } = useAuth();
-
-  // const handleChange = (selectedOptions) => selectedOptions.recipeId;
 
   const recipeOptions = () => {
     getRecipes(user.uid).then((recipeArray) => {
@@ -38,7 +35,6 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
   const loadOptions = (searchValue, callback) => {
     setTimeout(() => {
       const filteredOptions = recipeForDinner.filter((recipeOption) => recipeOption.label.toLowerCase().includes(searchValue.toLowerCase()));
-      console.warn('loadOptions', searchValue, filteredOptions);
       callback(filteredOptions);
     }, 500);
   };
@@ -75,10 +71,10 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
     <Form onSubmit={handleSubmit}>
       <h2 className="title mt-5">{dinnerObj?.firebaseKey ? 'Update' : 'Select'} a Meal for Dinner</h2>
       <AsyncSelect
-        // cacheOptions
         defaultOptions={recipeForDinner}
         loadOptions={loadOptions}
         onChange={handleChange}
+        value={{ label: dinnerObj.recipeId === formInput.recipeId }}
       />
       <Button type="submit" variant="success" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
     </Form>
@@ -90,7 +86,7 @@ PracticeDinnerForm.propTypes = {
     firebaseKey: PropTypes.string,
     recipeId: PropTypes.string,
   }),
-  dayId: PropTypes.string.isRequired,
+  dayId: PropTypes.string,
 };
 
 PracticeDinnerForm.defaultProps = {
@@ -98,6 +94,7 @@ PracticeDinnerForm.defaultProps = {
     firebaseKey: '',
     recipeId: '',
   },
+  dayId: '',
 };
 
 export default PracticeDinnerForm;
