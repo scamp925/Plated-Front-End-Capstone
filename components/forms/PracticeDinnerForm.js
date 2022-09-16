@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import AsyncSelect from 'react-select/async';
-// import Creatable from 'react-select/creatable';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
@@ -74,7 +73,7 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
         defaultOptions={recipeForDinner}
         loadOptions={loadOptions}
         onChange={handleChange}
-        value={{ label: dinnerObj.recipeId === formInput.recipeId }}
+        value={recipeForDinner.find((item) => item.recipeId === formInput.recipeId || '')}
       />
       <Button type="submit" variant="success" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
     </Form>
