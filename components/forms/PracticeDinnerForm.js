@@ -74,6 +74,7 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
         loadOptions={loadOptions}
         onChange={handleChange}
         value={recipeForDinner.find((item) => item.recipeId === formInput.recipeId || '')}
+        getOptionValue={(option) => option.name}
       />
       <Button type="submit" variant="success" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
     </Form>
