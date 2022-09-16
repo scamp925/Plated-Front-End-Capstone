@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import AsyncSelect from 'react-select/async';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
@@ -12,22 +14,42 @@ const initialState = {
   dayId: '',
 };
 
-function DinnerForm({ dinnerObj, dayId }) {
-  const [formInput, setFormInput] = useState(initialState);
+function PracticeDinnerForm({ dinnerObj, dayId }) {
   const [recipeForDinner, setRecipeForDinner] = useState([]);
+  const [formInput, setFormInput] = useState(initialState);
   const router = useRouter();
   const { user } = useAuth();
 
+  const recipeOptions = () => {
+    getRecipes(user.uid).then((recipeArray) => {
+      const recipeName = recipeArray.map((recipe) => ({
+        name: recipe.name,
+        label: recipe.name,
+        recipeId: recipe.firebaseKey,
+      }));
+      setRecipeForDinner(recipeName);
+    });
+  };
+
+  const loadOptions = (searchValue, callback) => {
+    setTimeout(() => {
+      const filteredOptions = recipeForDinner.filter((recipeOption) => recipeOption.label.toLowerCase().includes(searchValue.toLowerCase()));
+      callback(filteredOptions);
+    }, 500);
+  };
+
   useEffect(() => {
-    getRecipes(user.uid).then(setRecipeForDinner);
+    recipeOptions();
     if (dinnerObj?.firebaseKey) setFormInput(dinnerObj);
   }, [dinnerObj, user]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (selectedOption) => {
+    const { name, value } = selectedOption;
+    const recipeId = `${selectedOption.recipeId}`;
     setFormInput((prevState) => ({
       ...prevState,
       [name]: value,
+      recipeId,
     }));
   };
 
@@ -47,43 +69,32 @@ function DinnerForm({ dinnerObj, dayId }) {
   return (
     <Form onSubmit={handleSubmit}>
       <h2 className="title mt-5">{dinnerObj?.firebaseKey ? 'Update' : 'Select'} a Meal for Dinner</h2>
-      <Form.Select
-        name="recipeId"
+      <AsyncSelect
+        defaultOptions={recipeForDinner}
+        loadOptions={loadOptions}
         onChange={handleChange}
-        className="mb-3"
-        required
-      >
-        <option value="">Select a Recipe</option>
-        {
-            recipeForDinner.map((recipe) => (
-              <option
-                key={recipe.firebaseKey}
-                value={recipe.firebaseKey}
-                selected={dinnerObj?.recipeId === recipe.firebaseKey}
-              >
-                {recipe.name}
-              </option>
-            ))
-          }
-      </Form.Select>
+        value={recipeForDinner.find((item) => item.recipeId === formInput.recipeId || '')}
+        getOptionValue={(option) => option.name}
+      />
       <Button type="submit" variant="success" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
     </Form>
   );
 }
 
-DinnerForm.propTypes = {
+PracticeDinnerForm.propTypes = {
   dinnerObj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     recipeId: PropTypes.string,
   }),
-  dayId: PropTypes.string.isRequired,
+  dayId: PropTypes.string,
 };
 
-DinnerForm.defaultProps = {
+PracticeDinnerForm.defaultProps = {
   dinnerObj: {
     firebaseKey: '',
     recipeId: '',
   },
+  dayId: '',
 };
 
-export default DinnerForm;
+export default PracticeDinnerForm;
