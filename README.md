@@ -14,7 +14,7 @@
 - [Get Started](#get-started)
 - [Planning for Plated](#planning-for-plated)
 ___
-## So What Is Plated?
+## So, What Is Plated?
 Plated is where a recipe book meets a meal planner. Individual users are able to create, view, edit and delete recipes then with those recipes, users are able to plan out their week's dinners. 
 
 Plated eases the burden of the all too common question of "What's for dinner?" with it's intuitive design for users wanting to plan all of their dinners for the week. Plated users pick their meals from their own recipes; thus, giving all Plated users a peace of mind knowing that dinner will be something they actually like. Plus, having all user's recipes in one place will help users remember what exactly they can make! Thanks to Plated, meal planning is made easy, so users can keep living their lives without the constant stress of trying to figure out what tonight's dinner will be. If this sounds good to you, Plated is what you have been looking for. Happy meal planning!
@@ -45,6 +45,9 @@ General:
 - All Plated users are authenticated at sign-in thanks to Google Firebase, so everything done by a user on Plated will never change anything on another user's view/account.
 
 ### Stretch Features
+
+Dropdown select with search ability:
+- On the dinner form, users are now able to search for a recipe to select for dinner thanks to React Select's component AsyncSelect.
 
 ## Planning for Plated
 
