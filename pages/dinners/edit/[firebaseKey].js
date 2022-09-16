@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { getSingleDinnerCard } from '../../../api/dinnersData';
 import DinnerForm from '../../../components/forms/DinnerForm';
-import PracticeDinnerForm from '../../../components/forms/PracticeDinnerForm';
 
 export default function EditDinnerCard() {
   const [editItem, setEditItem] = useState();
@@ -16,7 +15,6 @@ export default function EditDinnerCard() {
   return (
     <div>
       <DinnerForm dinnerObj={editItem} />
-      <PracticeDinnerForm dinnerObj={editItem} />
     </div>
   );
 }
