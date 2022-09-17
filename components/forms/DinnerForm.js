@@ -77,7 +77,9 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
         getOptionValue={(option) => option.name}
         placeholder="Select or Search For a Recipe"
       />
-      <Button type="submit" variant="success" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
+      <div className="form-btn">
+        <Button type="submit" variant="success">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
+      </div>
     </Form>
   );
 }
