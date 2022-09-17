@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import Head from 'next/head';
 import getDaysOfTheWeek from '../api/daysOfTheWeekData';
 import { getRecipeOnDinnerCard } from '../api/mergedData';
 import DinnerCards from '../components/cards/dinnerCards';
@@ -25,6 +26,10 @@ function Home() {
 
   return (
     <div>
+      <Head>
+        <title>Plated | Home</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <h2 className="title mt-3">This Week's Dinners</h2>
       <ClearTheWeek onUpdate={getSunThruSat} />
       <div className="cards-container">

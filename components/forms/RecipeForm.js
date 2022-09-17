@@ -48,7 +48,7 @@ function RecipeForm({ recipeObj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="title mt-3">{recipeObj?.firebaseKey ? 'Update' : 'Add'} a Recipe</h2>
+      <h2 className="title mt-3">{recipeObj?.firebaseKey ? 'Update the' : 'Add a'} Recipe</h2>
       <div className="margin-top" />
       <Form.Group className="mb-3" controlId="formBasicInput">
         <Form.Label>Name of Recipe</Form.Label>
@@ -105,7 +105,9 @@ function RecipeForm({ recipeObj }) {
           />
         </div>
       ))}
-      <Button type="submit" variant="success" className="form-btn">{recipeObj?.firebaseKey ? 'Update' : 'Add'} Recipe</Button>
+      <div className="form-btn">
+        <Button type="submit" variant="success">{recipeObj?.firebaseKey ? 'Update' : 'Add'} Recipe</Button>
+      </div>
     </Form>
   );
 }

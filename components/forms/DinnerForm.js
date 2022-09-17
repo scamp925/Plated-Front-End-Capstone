@@ -68,7 +68,7 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="title mt-5">{dinnerObj?.firebaseKey ? 'Update' : 'Select'} a Meal for Dinner</h2>
+      <h2 className="title mt-5">{dinnerObj?.firebaseKey ? 'Update the' : 'Select a'} Meal for Dinner</h2>
       <AsyncSelect
         defaultOptions={recipeForDinner}
         loadOptions={loadOptions}
@@ -77,7 +77,9 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
         getOptionValue={(option) => option.name}
         placeholder="Select or Search For a Recipe"
       />
-      <Button type="submit" variant="success" className="form-btn">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
+      <div className="form-btn">
+        <Button type="submit" variant="success">{dinnerObj?.firebaseKey ? 'Update' : 'Add'} Dinner Card</Button>
+      </div>
     </Form>
   );
 }

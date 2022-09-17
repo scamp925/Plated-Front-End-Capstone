@@ -172,6 +172,12 @@ label {
   font-weight: bold;
 }
 
+.form-btn {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 20px 0;
+}
+
 /* RECIPE FORM */
 .note {
   color: #f8f9fa;

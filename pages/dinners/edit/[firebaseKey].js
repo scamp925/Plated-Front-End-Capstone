@@ -1,5 +1,6 @@
-import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { getSingleDinnerCard } from '../../../api/dinnersData';
 import DinnerForm from '../../../components/forms/DinnerForm';
 
@@ -14,6 +15,10 @@ export default function EditDinnerCard() {
 
   return (
     <div>
+      <Head>
+        <title>Plated | Update the Meal</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <DinnerForm dinnerObj={editItem} />
     </div>
   );
