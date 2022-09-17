@@ -48,6 +48,9 @@ export default function NavBar() {
                   <Link passHref href="/recipes/new" onClick={toggleMenu}>
                     <h3>Add Recipe</h3>
                   </Link>
+                  <Link passHref href="/eatOut/new" onClick={toggleMenu}>
+                    <h3>Add Eat Out Option</h3>
+                  </Link>
                   <button type="button" className="btn btn-danger" onClick={signOut}>
                     Sign Out
                   </button>
