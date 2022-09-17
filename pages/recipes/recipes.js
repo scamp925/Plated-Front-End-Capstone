@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import Head from 'next/head';
 import Link from 'next/link';
 import { getRecipes } from '../../api/recipesData';
 import RecipeCards from '../../components/cards/recipeCards';
@@ -25,6 +26,10 @@ export default function UserRecipes() {
 
   return (
     <div>
+      <Head>
+        <title>Plated | Recipes</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <header>
         <h2 className="title mt-3">Your Recipes</h2>
         <div className="text-center my-4">
