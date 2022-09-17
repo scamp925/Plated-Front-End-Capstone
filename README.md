@@ -12,6 +12,7 @@
 - [MVP Features](#mvp-features)
 - [Stretch Features](#stretch-features)
 - [Get Started](#get-started)
+- [My Learning Corner](#learning-corner)
 - [Planning for Plated](#planning-for-plated)
 ___
 ## So, What Is Plated?
@@ -46,9 +47,17 @@ General:
 
 ### Stretch Features
 
+CSS Update
+- Changed the entire look and feel of Plated. Hello new color scheme and font!
+
+[Plated's CSS Branch](https://github.com/scamp925/Plated-Front-End-Capstone/tree/css)
+vs
+[Plated's MVP Branch](https://github.com/scamp925/Plated-Front-End-Capstone/tree/plated-mvp)
+
 Dropdown select with search ability:
 - On the dinner form, users are now able to search for a recipe to select for dinner thanks to React Select's component AsyncSelect.
 
+![searchable-dropdown-plated](https://user-images.githubusercontent.com/98675776/190864428-a6154232-f6e1-4d84-891e-ca205ceca68b.gif)
 ## Planning for Plated
 
 #### ERD for Plated's MVP
