@@ -42,7 +42,7 @@ export default function NavBar() {
                   <Link passHref href="/">
                     <h3>Home</h3>
                   </Link>
-                  <Link passHref href="/recipes/recipes" onClick={toggleMenu}>
+                  <Link passHref href="/mealOptions/" onClick={toggleMenu}>
                     <h3>Recipes</h3>
                   </Link>
                   <Link passHref href="/recipes/new" onClick={toggleMenu}>

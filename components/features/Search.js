@@ -23,8 +23,8 @@ function Search({ recipes, setFilteredRecipes }) {
     <div>
       <InputGroup className="mb-3">
         <Form.Control
-          placeholder="Search Recipe by Name"
-          aria-label="Search Recipe by Name"
+          placeholder="Search for Meal by Name"
+          aria-label="Search for Meal by Name"
           value={searchInput}
           onChange={handleChange}
           aria-describedby="basic-addon2"
