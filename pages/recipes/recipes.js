@@ -27,11 +27,11 @@ export default function UserRecipes() {
   return (
     <div>
       <Head>
-        <title>Plated | Recipes</title>
+        <title>Plated | Meal Options</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <h2 className="title mt-3">Your Recipes</h2>
+        <h2 className="title mt-3">Your Meal Options</h2>
         <div className="text-center my-4">
           <Link href="/recipes/new" passHref>
             <Button variant="outline-light" className="add-recipe-btn">Add a Recipe</Button>
