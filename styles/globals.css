@@ -73,7 +73,7 @@ h3 {
   font-size: x-large;
 }
 
-/* DAY/DINNER/RECIPE CARDS */
+/* DAY/DINNER/RECIPE/EAT OUT CARDS */
 .cards-container {
   display: flex;
   flex-flow: row wrap;
@@ -114,7 +114,7 @@ h3 {
 /* ADD A RECIPE BUTTON ON RECIPE PAGE */
 .add-recipe-btn {
   font-size: larger;
-  margin: 0 3px;
+  margin: 0 4px;
 }
 
 /* RECIPE CARDS */
@@ -129,6 +129,10 @@ h3 {
   text-decoration: underline;
 }
 
+/* EAT OUT CARDS */
+.eat-out-card {
+  margin: 30px 0 10px 0;
+}
 /* SINGLE VIEW OF RECIPE */
 .single-recipe-view {
   margin: 30px 0px;
@@ -188,4 +192,13 @@ label {
 
 .yes-option {
   margin-left: 10px;
+}
+
+/* EAT OUT FORM */
+.hide-div-on-eat-out-form {
+  display: block;
+}
+
+.show-div-on-eat-out-form {
+  display: block;
 }

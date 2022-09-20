@@ -13,7 +13,7 @@ function EatOutCards({ dayObj, eatOutObj }) {
           <Card.Text><b>Where to:</b> {eatOutObj?.placeName}</Card.Text>
         </Card.Body>
         {!dayObj.day && (
-        <footer className="eat-out-cards-footer">
+        <footer className="edit-delete-footer eat-out-card">
           <Link href={`/eatOut/edit/${eatOutObj.firebaseKey}`} passHref>
             <Button variant="info" className="edit-btn">Edit</Button>
           </Link>
