@@ -12,13 +12,13 @@ function EatOutForm({ eatOutObj }) {
   const router = useRouter();
   const { user } = useAuth();
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormInput((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
-  //   }));
-  // };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormInput((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -62,6 +62,11 @@ function EatOutForm({ eatOutObj }) {
               whereTo: e.target.value,
             }))}
           />
+          <div className={formInput.whereTo ? 'show-div-on-eat-out-form' : 'hide-div-on-eat-out-form'}>
+            <Form.Group className="mb-3" controlId="formBasicInput">
+              <Form.Control type="text" placeholder={formInput.whereTo === 'Different Home' ? "e.g. Lucy's house" : 'e.g. Olive Garden'} name="placeName" value={formInput.placeName} onChange={handleChange} />
+            </Form.Group>
+          </div>
         </div>
       ))}
       <div className="form-btn">
