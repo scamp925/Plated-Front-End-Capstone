@@ -20,11 +20,11 @@ function DinnerCards({ dayCardInfo, onUpdate }) {
       <Card style={{ width: '18rem' }} className="individual-cards dinner">
         <Card.Body>
           <Card.Title className="name-of-day">{dayCardInfo.dayObj?.day}</Card.Title>
-          {dayCardInfo.userDinnerObj && (
-            <>
-              <RecipeCards recipeObj={dayCardInfo.recipeObj} />
-              <EatOutCards eatOutObj={dayCardInfo.eatOutObj} />
-            </>
+          {dayCardInfo.userDinnerObj?.recipeId && (
+          <RecipeCards recipeObj={dayCardInfo.recipeObj} />
+          )}
+          {dayCardInfo.userDinnerObj?.eatOutId && (
+          <EatOutCards eatOutObj={dayCardInfo.eatOutObj} />
           )}
         </Card.Body>
         <footer>
