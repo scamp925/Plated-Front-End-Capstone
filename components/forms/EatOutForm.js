@@ -64,6 +64,7 @@ function EatOutForm({ eatOutObj }) {
           />
           <section hidden={!formInput.whereTo}>
             <Form.Group className="mb-3" controlId="formBasicInput">
+              <Form.Label>Where are you going?</Form.Label>
               <Form.Control type="text" placeholder={formInput.whereTo === 'Different Home' ? "e.g. Lucy's house" : 'e.g. Olive Garden'} name="placeName" value={formInput.placeName} onChange={handleChange} />
             </Form.Group>
           </section>
