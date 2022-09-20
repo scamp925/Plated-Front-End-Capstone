@@ -24,7 +24,7 @@ function DinnerCards({ dayCardInfo, onUpdate }) {
           <RecipeCards recipeObj={dayCardInfo.recipeObj} />
           )}
           {dayCardInfo.userDinnerObj?.eatOutId && (
-          <EatOutCards eatOutObj={dayCardInfo.eatOutObj} />
+          <EatOutCards dayObj={dayCardInfo.dayObj} eatOutObj={dayCardInfo.eatOutObj} />
           )}
         </Card.Body>
         <footer>
