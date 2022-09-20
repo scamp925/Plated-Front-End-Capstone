@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import getDaysOfTheWeek from '../api/daysOfTheWeekData';
-import { getRecipeOnDinnerCard } from '../api/mergedData';
-import DinnerCards from '../components/cards/DinnerCards';
+import { getMealOnDinnerCard } from '../api/mergedData';
+import DinnerCards from '../components/cards/dinnerCards';
 import ClearTheWeek from '../components/features/ClearTheWeek';
 import { useAuth } from '../utils/context/authContext';
 
@@ -14,7 +14,7 @@ function Home() {
 
   const getSunThruSat = () => {
     getDaysOfTheWeek().then((daysArray) => {
-      const dayPromises = daysArray.map((dayObj) => getRecipeOnDinnerCard(dayObj, user.uid));
+      const dayPromises = daysArray.map((dayObj) => getMealOnDinnerCard(dayObj, user.uid));
 
       Promise.all(dayPromises).then(setDays);
     });

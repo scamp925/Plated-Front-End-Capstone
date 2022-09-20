@@ -55,8 +55,8 @@ function EatOutForm({ eatOutObj }) {
             name="whereTo"
             type={type}
             id={`inline-${type}-2`}
-            value="Different Home"
-            checked={formInput.whereTo === 'Different Home'}
+            value="Someone's Home"
+            checked={formInput.whereTo === "Someone's Home"}
             onChange={(e) => setFormInput((prevState) => ({
               ...prevState,
               whereTo: e.target.value,
@@ -65,7 +65,7 @@ function EatOutForm({ eatOutObj }) {
           <section hidden={!formInput.whereTo}>
             <Form.Group className="mb-3" controlId="formBasicInput">
               <Form.Label>Where are you going?</Form.Label>
-              <Form.Control type="text" placeholder={formInput.whereTo === 'Different Home' ? "e.g. Lucy's house" : 'e.g. Olive Garden'} name="placeName" value={formInput.placeName} onChange={handleChange} />
+              <Form.Control type="text" placeholder={formInput.whereTo === "Someone's Home" ? "e.g. Lucy's house" : 'e.g. Olive Garden'} name="placeName" value={formInput.placeName} onChange={handleChange} />
             </Form.Group>
           </section>
         </div>

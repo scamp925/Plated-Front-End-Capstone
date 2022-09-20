@@ -1,16 +1,19 @@
 import {
   deleteDinnerCard, getDinnersByDay, getDinnersByRecipe,
 } from './dinnersData';
+import { getSingleEatOutCard } from './eatOutData';
 import { deleteRecipe, getSingleRecipe } from './recipesData';
 
-// // GET RECIPE ON DINNER CARD
-const getRecipeOnDinnerCard = (dayObj, uid) => new Promise((resolve, reject) => {
+// // GET RECIPE OR EAT OUT OPTION ON DINNER CARD
+const getMealOnDinnerCard = (dayObj, uid) => new Promise((resolve, reject) => {
   getDinnersByDay(dayObj.firebaseKey).then((dinnerArray) => {
     const userDinnerObj = dinnerArray.find((dinnerObj) => dinnerObj.uid === uid);
     if (!userDinnerObj) {
       resolve({ dayObj, userDinnerObj });
-    } else {
+    } else if (userDinnerObj.recipeId) {
       getSingleRecipe(userDinnerObj.recipeId).then((recipeObj) => resolve({ dayObj, userDinnerObj, recipeObj }));
+    } else {
+      getSingleEatOutCard(userDinnerObj.eatOutId).then((eatOutObj) => resolve({ dayObj, userDinnerObj, eatOutObj }));
     }
   })
     .catch(reject);
@@ -28,6 +31,6 @@ const deleteRecipeCompletely = (recipeId) => new Promise((resolve, reject) => {
 });
 
 export {
-  getRecipeOnDinnerCard,
+  getMealOnDinnerCard,
   deleteRecipeCompletely,
 };

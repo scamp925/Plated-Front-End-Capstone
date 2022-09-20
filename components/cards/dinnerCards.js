@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import RecipeCards from './RecipeCards';
 import { deleteDinnerCard } from '../../api/dinnersData';
+import EatOutCards from './EatOutCards';
 
 function DinnerCards({ dayCardInfo, onUpdate }) {
   const deleteThisDinnerCard = () => {
@@ -19,8 +20,11 @@ function DinnerCards({ dayCardInfo, onUpdate }) {
       <Card style={{ width: '18rem' }} className="individual-cards dinner">
         <Card.Body>
           <Card.Title className="name-of-day">{dayCardInfo.dayObj?.day}</Card.Title>
-          {dayCardInfo.userDinnerObj && (
-            <RecipeCards recipeObj={dayCardInfo.recipeObj} />
+          {dayCardInfo.userDinnerObj?.recipeId && (
+          <RecipeCards recipeObj={dayCardInfo.recipeObj} />
+          )}
+          {dayCardInfo.userDinnerObj?.eatOutId && (
+          <EatOutCards dayObj={dayCardInfo.dayObj} eatOutObj={dayCardInfo.eatOutObj} />
           )}
         </Card.Body>
         <footer>
@@ -59,9 +63,16 @@ DinnerCards.propTypes = {
       ingredients: PropTypes.string,
       directions: PropTypes.string,
     }),
+    eatOutObj: PropTypes.shape({
+      firebaseKey: PropTypes.string,
+      placeName: PropTypes.string,
+      whereTo: PropTypes.string,
+    }),
     userDinnerObj: PropTypes.shape({
       dayId: PropTypes.string,
       firebaseKey: PropTypes.string,
+      eatOutId: PropTypes.string,
+      locationStatusForDinner: PropTypes.string,
       recipeId: PropTypes.string,
     }),
   }),

@@ -114,6 +114,7 @@ h3 {
 /* ADD A RECIPE BUTTON ON RECIPE PAGE */
 .add-recipe-btn {
   font-size: larger;
+  margin: 0 3px;
 }
 
 /* RECIPE CARDS */
@@ -187,13 +188,4 @@ label {
 
 .yes-option {
   margin-left: 10px;
-}
-
-/* EAT OUT FORM */
-.hide-div-on-eat-out-form {
-  display: block;
-}
-
-.show-div-on-eat-out-form {
-  display: block;
 }
