@@ -46,6 +46,9 @@ export default function UserRecipes() {
           <Link href="/recipes/new" passHref>
             <Button variant="outline-light" className="add-recipe-btn">Add a Recipe</Button>
           </Link>
+          <Link href="/eatOut/new" passHref>
+            <Button variant="outline-light" className="add-recipe-btn">Add an Eat Out Option</Button>
+          </Link>
         </div>
       </header>
       <Search recipes={recipes} setFilteredRecipes={setFilteredRecipes} />

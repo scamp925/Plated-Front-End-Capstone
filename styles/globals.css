@@ -114,6 +114,7 @@ h3 {
 /* ADD A RECIPE BUTTON ON RECIPE PAGE */
 .add-recipe-btn {
   font-size: larger;
+  margin: 0 3px;
 }
 
 /* RECIPE CARDS */
