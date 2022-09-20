@@ -4,13 +4,16 @@ import Button from 'react-bootstrap/Button';
 import Head from 'next/head';
 import Link from 'next/link';
 import { getRecipes } from '../../api/recipesData';
-import RecipeCards from '../../components/cards/recipeCards';
+import RecipeCards from '../../components/cards/RecipeCards';
 import Search from '../../components/features/Search';
 import { useAuth } from '../../utils/context/authContext';
+import { getEatOutCards } from '../../api/eatOutData';
+import EatOutCards from '../../components/cards/EatOutCards';
 
 export default function UserRecipes() {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [eatOut, setEatOut] = useState([]);
   const { user } = useAuth();
 
   const getUserRecipes = () => {
@@ -20,18 +23,25 @@ export default function UserRecipes() {
     });
   };
 
+  const getUserEatOutCards = () => {
+    getEatOutCards(user.uid).then((eatOutArray) => {
+      setEatOut(eatOutArray);
+    });
+  };
+
   useEffect(() => {
     getUserRecipes();
+    getUserEatOutCards();
   }, []);
 
   return (
     <div>
       <Head>
-        <title>Plated | Recipes</title>
+        <title>Plated | Meal Options</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <h2 className="title mt-3">Your Recipes</h2>
+        <h2 className="title mt-3">Your Meal Options</h2>
         <div className="text-center my-4">
           <Link href="/recipes/new" passHref>
             <Button variant="outline-light" className="add-recipe-btn">Add a Recipe</Button>
@@ -42,6 +52,9 @@ export default function UserRecipes() {
       <section className="cards-container">
         {filteredRecipes?.map((recipe) => (
           <RecipeCards key={recipe.firebaseKey} recipeObj={recipe} />
+        ))}
+        {eatOut?.map((eatOutCard) => (
+          <EatOutCards eatOutObj={eatOutCard} />
         ))}
       </section>
     </div>

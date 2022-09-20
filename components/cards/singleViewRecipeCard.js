@@ -12,7 +12,7 @@ function SingleViewRecipeCard({ recipeObj, onUpdate }) {
   const deleteThisRecipe = () => {
     if (window.confirm(`Warning! You are about to permanently delete ${recipeObj.name}. Click "OK" if you wish to continue.`)) {
       deleteRecipeCompletely(recipeObj.firebaseKey).then(() => onUpdate()).then(() => {
-        router.push('/recipes/recipes');
+        router.push('/mealOptions/');
       });
     }
   };

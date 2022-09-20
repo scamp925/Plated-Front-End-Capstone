@@ -188,3 +188,12 @@ label {
 .yes-option {
   margin-left: 10px;
 }
+
+/* EAT OUT FORM */
+.hide-div-on-eat-out-form {
+  display: block;
+}
+
+.show-div-on-eat-out-form {
+  display: block;
+}

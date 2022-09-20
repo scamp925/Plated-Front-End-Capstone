@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { getRecipes, getSingleRecipe } from '../../api/recipesData';
-import SingleViewRecipeCard from '../../components/cards/singleViewRecipeCard';
+import SingleViewRecipeCard from '../../components/cards/SingleViewRecipeCard';
 import { useAuth } from '../../utils/context/authContext';
 
 export default function ViewSingleRecipe() {
