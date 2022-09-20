@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Head from 'next/head';
 import Link from 'next/link';
 import { getRecipes } from '../../api/recipesData';
-import RecipeCards from '../../components/cards/RecipeCards';
+import RecipeCards from '../../components/cards/recipeCards';
 import Search from '../../components/features/Search';
 import { useAuth } from '../../utils/context/authContext';
 import { getEatOutCards } from '../../api/eatOutData';
