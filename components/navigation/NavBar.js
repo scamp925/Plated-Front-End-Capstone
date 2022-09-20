@@ -43,7 +43,7 @@ export default function NavBar() {
                     <h3>Home</h3>
                   </Link>
                   <Link passHref href="/mealOptions/" onClick={toggleMenu}>
-                    <h3>Recipes</h3>
+                    <h3>Meal Options</h3>
                   </Link>
                   <Link passHref href="/recipes/new" onClick={toggleMenu}>
                     <h3>Add Recipe</h3>
