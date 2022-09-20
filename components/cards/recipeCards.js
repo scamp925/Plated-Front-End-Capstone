@@ -9,9 +9,9 @@ function RecipeCards({ recipeObj }) {
       <Card style={{ width: '18rem' }} className="individual-cards">
         <Card.Body>
           <Card.Title className="recipe-title">{recipeObj?.name}</Card.Title>
-          <Card.Text>Total Time: {recipeObj?.totalTime}</Card.Text>
-          <Card.Text>{recipeObj?.leftovers === 'Yes' ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
-          <Card.Text>{recipeObj?.preheat && 'Preheat Oven To:'} {recipeObj?.preheat}</Card.Text>
+          <Card.Text><b>Total Time:</b> {recipeObj?.totalTime}</Card.Text>
+          <Card.Text><b>Leftovers:</b> {recipeObj?.leftovers === 'Yes' ? 'Yes' : 'No'}</Card.Text>
+          <Card.Text>{recipeObj?.preheat && <b>Preheat Oven To:</b>} {recipeObj?.preheat}</Card.Text>
           <div className="underline-link">
             <Link href={`/recipes/${recipeObj?.firebaseKey}`} passHref>View Details</Link>
           </div>

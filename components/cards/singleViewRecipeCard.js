@@ -25,12 +25,12 @@ function SingleViewRecipeCard({ recipeObj, onUpdate }) {
             <Card.Title className="single-recipe-title">{recipeObj.name}</Card.Title>
           </header>
           <section className="recipe-details">
-            <Card.Text>Total Time: {recipeObj.totalTime}</Card.Text>
-            <Card.Text>{recipeObj.leftovers === 'Yes' ? 'Leftovers: Yes' : 'Leftovers: No'}</Card.Text>
-            <Card.Text>{recipeObj.preheat && 'Preheat Oven To:'} {recipeObj.preheat}</Card.Text>
-            <Card.Text>{recipeObj.ingredients && 'Ingredients:'}</Card.Text>
+            <Card.Text><b>Total Time:</b> {recipeObj.totalTime}</Card.Text>
+            <Card.Text><b>Leftovers:</b> {recipeObj?.leftovers === 'Yes' ? 'Yes' : 'No'}</Card.Text>
+            <Card.Text>{recipeObj?.preheat && <b>Preheat Oven To:</b>} {recipeObj?.preheat}</Card.Text>
+            <Card.Text>{recipeObj.ingredients && <b>Ingredients:</b>}</Card.Text>
             <Card.Text className="box-around-input ingredients">{recipeObj.ingredients}</Card.Text>
-            <Card.Text>{recipeObj.directions && 'Directions:'}</Card.Text>
+            <Card.Text>{recipeObj.directions && <b>Directions:</b>}</Card.Text>
             <Card.Text className="box-around-input">{recipeObj.directions}</Card.Text>
           </section>
           <footer className="single-view-edit-and-delete-buttons">
