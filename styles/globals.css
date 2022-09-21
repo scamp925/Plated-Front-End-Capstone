@@ -5,7 +5,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Handlee', cursive;
+  font-family: 'Handlee', cursive !important;
 }
 
 a {
@@ -18,12 +18,11 @@ a {
 }
 
 body {
-  background-color: #f19c79;
-  /* background-image: url(../images/pngegg-mobile.png); */
+  background-color: #f19c79 !important;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  color: #a44a3f;
+  color: #a44a3f !important;
 }
 
 h1 {
@@ -34,7 +33,7 @@ h1 {
 h2 {
   display: flex;
   justify-content: center;
-  color: #f8f9fa;
+  color: #f8f9fa !important;
   font-size: xx-large;
   font-weight: bold;
 }
@@ -151,7 +150,7 @@ h3 {
 }
 
 .box-around-input {
-  border: #a44a3f solid 1px;
+  border: #a44a3f solid 1px !important;
   padding: 5px 15px;
   white-space: pre-line;
 }
@@ -185,7 +184,7 @@ label {
 
 /* RECIPE FORM */
 .note {
-  color: #f8f9fa;
+  color: #f8f9fa !important;
   font-size: 78%;
   margin-left: 20px;
 }
