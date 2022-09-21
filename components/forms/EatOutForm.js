@@ -28,7 +28,7 @@ function EatOutForm({ eatOutObj }) {
     e.preventDefault();
     if (eatOutObj?.firebaseKey) {
       updateEatOutCard(formInput)
-        .then(() => router.push(`/recipes/${eatOutObj.firebaseKey}`));
+        .then(() => router.push('/mealOptions/'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createEatOutCard(payload).then(() => {
