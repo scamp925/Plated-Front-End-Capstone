@@ -27,7 +27,7 @@ function EatOutCards({ dayObj, eatOutObj, onUpdate }) {
         {!dayObj.day && (
         <footer className="edit-delete-footer eat-out-card">
           <Link href={`/eatOut/edit/${eatOutObj.firebaseKey}`} passHref>
-            <Button variant="info">Edit</Button>
+            <Button variant="info" className="edit-btn">Edit</Button>
           </Link>
           <Button variant="danger" onClick={deleteThisEatOutCard}>Delete</Button>
         </footer>

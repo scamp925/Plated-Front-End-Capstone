@@ -56,6 +56,9 @@ h3 {
   text-align: center !important;
 }
 
+.edit-btn {
+  color: #fff;
+}
 .welcome-header {
   display: flex !important;
   justify-content: center !important;
@@ -127,6 +130,8 @@ h3 {
   display: flex !important;
   justify-content: center !important;
   text-decoration: underline !important;
+  color: #a44a3f !important;
+  margin-top: 40px !important;
 }
 
 /* EAT OUT CARDS */
