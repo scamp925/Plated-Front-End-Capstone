@@ -23,12 +23,19 @@ const getDinnersByDay = (dayId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET DINNER OBJECT BY RECIPEID
 const getDinnersByRecipe = (recipeId) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/dinners.json?orderBy="recipeId"&equalTo="${recipeId}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch(reject);
 });
 
+// GET DINNER OBJECT BY EATOUTID
+const getDinnersByEatOutId = (eatOutId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/dinners.json?orderBy="eatOutId"&equalTo="${eatOutId}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
 // GET SINGLE DINNER CARD
 const getSingleDinnerCard = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/dinners/${firebaseKey}.json`)
@@ -81,6 +88,7 @@ export {
   getDinnerCards,
   getDinnersByDay,
   getDinnersByRecipe,
+  getDinnersByEatOutId,
   getSingleDinnerCard,
   getArrayOfFirebaseKey,
   createDinnerCard,

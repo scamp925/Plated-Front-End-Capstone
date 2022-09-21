@@ -1,7 +1,7 @@
 import {
-  deleteDinnerCard, getDinnersByDay, getDinnersByRecipe,
+  deleteDinnerCard, getDinnersByDay, getDinnersByEatOutId, getDinnersByRecipe,
 } from './dinnersData';
-import { getSingleEatOutCard } from './eatOutData';
+import { deleteEatOutCard, getSingleEatOutCard } from './eatOutData';
 import { deleteRecipe, getSingleRecipe } from './recipesData';
 
 // // GET RECIPE OR EAT OUT OPTION ON DINNER CARD
@@ -30,7 +30,19 @@ const deleteRecipeCompletely = (recipeId) => new Promise((resolve, reject) => {
   }).catch(reject);
 });
 
+// DELETE SINGLE EAT OUT CARD FROM ALL PAGES OF THE APP
+const deleteEatOutCardCompletely = (eatOutId) => new Promise((resolve, reject) => {
+  getDinnersByEatOutId(eatOutId).then((dinnerArray) => {
+    const deleteDinnerCardPromises = dinnerArray.map((dinner) => deleteDinnerCard(dinner.firebaseKey));
+
+    Promise.all(deleteDinnerCardPromises).then(() => {
+      deleteEatOutCard(eatOutId).then(resolve);
+    });
+  }).catch(reject);
+});
+
 export {
   getMealOnDinnerCard,
   deleteRecipeCompletely,
+  deleteEatOutCardCompletely,
 };

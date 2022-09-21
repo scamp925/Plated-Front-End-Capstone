@@ -57,7 +57,7 @@ export default function UserRecipes() {
           <RecipeCards key={recipe.firebaseKey} recipeObj={recipe} />
         ))}
         {eatOut?.map((eatOutCard) => (
-          <EatOutCards key={eatOutCard.firebaseKey} eatOutObj={eatOutCard} />
+          <EatOutCards key={eatOutCard.firebaseKey} eatOutObj={eatOutCard} onUpdate={getUserEatOutCards} />
         ))}
       </section>
     </div>
