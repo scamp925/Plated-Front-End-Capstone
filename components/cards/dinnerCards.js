@@ -20,10 +20,10 @@ function DinnerCards({ dayCardInfo, onUpdate }) {
       <Card style={{ width: '18rem' }} className="individual-cards dinner">
         <Card.Body>
           <Card.Title className="name-of-day">{dayCardInfo.dayObj?.day}</Card.Title>
-          {dayCardInfo.userDinnerObj?.recipeId && (
+          {dayCardInfo.userDinnerObj?.locationStatusForDinner === 'Staying Home' && (
           <RecipeCards recipeObj={dayCardInfo.recipeObj} />
           )}
-          {dayCardInfo.userDinnerObj?.eatOutId && (
+          {dayCardInfo.userDinnerObj?.locationStatusForDinner === 'Going Out' && (
           <EatOutCards dayObj={dayCardInfo.dayObj} eatOutObj={dayCardInfo.eatOutObj} />
           )}
         </Card.Body>
