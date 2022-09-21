@@ -71,6 +71,7 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
       ...prevState,
       [name]: value,
       recipeId,
+      eatOutId: '',
     }));
   };
 
@@ -81,6 +82,7 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
       ...prevState,
       [name]: value,
       eatOutId,
+      recipeId: '',
     }));
   };
 
@@ -136,7 +138,7 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
               defaultOptions={formInput.locationStatusForDinner === 'Staying Home' ? recipeForDinner : eatOutForDinner}
               loadOptions={formInput.locationStatusForDinner === 'Staying Home' ? loadRecipeOptions : loadEatOutOptions}
               onChange={formInput.locationStatusForDinner === 'Staying Home' ? handleChangeForRecipe : handleChangeForEatOut}
-              value={formInput.locationStatusForDinner === 'Staying Home' ? recipeForDinner.find((item) => item.recipeId === formInput.recipeId || '') : eatOutForDinner.find((item) => item.eatOutId === formInput.recipeId || '')}
+              value={formInput.locationStatusForDinner === 'Staying Home' ? recipeForDinner.find((item) => item.recipeId === formInput.recipeId || '') : eatOutForDinner.find((item) => item.eatOutId === formInput.eatOutId || '')}
               getOptionValue={(option) => option.name}
               placeholder={formInput.locationStatusForDinner === 'Staying Home' ? 'Select or Search For a Recipe' : 'Select or Search Where You Are Going To'}
             />
