@@ -43,13 +43,13 @@ export default function NavBar() {
                     <h3>Home</h3>
                   </Link>
                   <Link passHref href="/mealOptions/" onClick={toggleMenu}>
-                    <h3>Meal Options</h3>
+                    <h3>Your Meals</h3>
                   </Link>
                   <Link passHref href="/recipes/new" onClick={toggleMenu}>
-                    <h3>Add Recipe</h3>
+                    <h3>Add a Recipe</h3>
                   </Link>
                   <Link passHref href="/eatOut/new" onClick={toggleMenu}>
-                    <h3>Add Eat Out Option</h3>
+                    <h3>Add a Going Out Meal</h3>
                   </Link>
                   <button type="button" className="btn btn-danger" onClick={signOut}>
                     Sign Out

@@ -21,7 +21,7 @@ function EatOutCards({ dayObj, eatOutObj, onUpdate }) {
     <div>
       <Card style={{ width: '18rem' }} className="individual-cards">
         <Card.Body>
-          <Card.Title className="recipe-title">Eating Out for Dinner</Card.Title>
+          <Card.Title className="recipe-title">Going Out for Dinner</Card.Title>
           <Card.Text><b>Where to:</b> {eatOutObj?.placeName}</Card.Text>
         </Card.Body>
         {!dayObj.day && (

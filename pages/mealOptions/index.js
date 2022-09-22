@@ -37,17 +37,17 @@ export default function UserRecipes() {
   return (
     <div>
       <Head>
-        <title>Plated | Meal Options</title>
+        <title>Plated | Your Meals</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <h2 className="title mt-3">Your Meal Options</h2>
+        <h2 className="title mt-3">Your Meals</h2>
         <div className="text-center my-4">
           <Link href="/recipes/new" passHref>
             <Button variant="outline-light" className="add-recipe-btn">Add a Recipe</Button>
           </Link>
           <Link href="/eatOut/new" passHref>
-            <Button variant="outline-light" className="add-recipe-btn">Add an Eat Out Option</Button>
+            <Button variant="outline-light" className="add-recipe-btn">Add a Going Out Meal</Button>
           </Link>
         </div>
       </header>

@@ -39,7 +39,7 @@ function EatOutForm({ eatOutObj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="title mt-3">{eatOutObj?.firebaseKey ? 'Update the' : 'Add a New'} Eat Out Option</h2>
+      <h2 className="title mt-3">{eatOutObj?.firebaseKey ? 'Update the' : 'Add a New'} Going Out Option</h2>
       <div className="margin-top" />
       {['radio'].map((type) => (
         <div key={`inline-${type}`} className="mb-3">
