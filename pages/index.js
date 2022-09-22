@@ -30,7 +30,7 @@ function Home() {
         <title>Plated | Home</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <h2 className="title mt-3">This Week's Dinners</h2>
+      <h2 className="title mt-3">Your Week's Dinners</h2>
       <ClearTheWeek onUpdate={getSunThruSat} />
       <div className="cards-container">
         {days?.map((day) => (

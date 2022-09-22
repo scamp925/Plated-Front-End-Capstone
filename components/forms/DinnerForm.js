@@ -101,7 +101,7 @@ function PracticeDinnerForm({ dinnerObj, dayId }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="title mt-5">{dinnerObj?.firebaseKey ? 'Update Your Meal' : 'What Are You Doing'} for Dinner</h2>
+      <h2 className="title mt-5">{dinnerObj?.firebaseKey ? 'Update Your Meal' : 'What Will You Be Doing'} for Dinner</h2>
       <div className="margin-top" />
       {['radio'].map((type) => (
         <div key={`inline-${type}`} className="mb-3">

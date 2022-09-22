@@ -47,12 +47,13 @@ EatOutCards.propTypes = {
     placeName: PropTypes.string,
     whereTo: PropTypes.string,
   }),
-  onUpdate: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func,
 };
 
 EatOutCards.defaultProps = {
   dayObj: {},
   eatOutObj: {},
+  onUpdate: undefined,
 };
 
 export default EatOutCards;
