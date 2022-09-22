@@ -4,7 +4,7 @@ import {
 import { deleteEatOutCard, getSingleEatOutCard } from './eatOutData';
 import { deleteRecipe, getSingleRecipe } from './recipesData';
 
-// // GET RECIPE OR EAT OUT OPTION ON DINNER CARD
+// GET RECIPE OR EAT OUT OPTION ON DINNER CARD
 const getMealOnDinnerCard = (dayObj, uid) => new Promise((resolve, reject) => {
   getDinnersByDay(dayObj.firebaseKey).then((dinnerArray) => {
     const userDinnerObj = dinnerArray.find((dinnerObj) => dinnerObj.uid === uid);
