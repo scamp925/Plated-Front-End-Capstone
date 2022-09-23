@@ -13,7 +13,6 @@
 - [MVP Features](#mvp-features)
 - [Stretch Features](#stretch-features)
 - [Try Plated Out For Yourself](#try-plated-out-for-yourself)
-- [My Learning Corner](#learning-corner)
 - [Planning for Plated](#planning-for-plated)
 - [Tech Stacks for Plated](#tech-stacks)
 ___
@@ -99,6 +98,7 @@ git@github.com:scamp925/Plated-Front-End-Capstone.git
 3. Once in Plated's code, create a .env file at the root of the project
 4. Copy the environmental variables from Firebase and Paste them as the properties of the keys found in your newly created .env file
 5. Import sample data found in data folder in Plated to Realtime Database in your Firebase project
+![finding-sample-data](https://user-images.githubusercontent.com/98675776/191889055-468ebbbd-3143-4362-8adf-99668352d15c.png)
 6. Be in the root directory and from your command line, run
 ``` bash
 npm install or npm i
@@ -111,7 +111,7 @@ npm run prepare
 ``` bash
 npm run dev
 ```
-9. Open http://localhost:3000 with your browser.
+9. Open http://localhost:3000 with your browser and enjoy Plated!
 ## Planning for Plated
 
 #### ERD for Plated's MVP
