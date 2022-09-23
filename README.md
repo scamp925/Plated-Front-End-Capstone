@@ -22,7 +22,7 @@ Plated eases the burden of the all too common question of "What's for dinner?" w
 
 ### MVP Features
 
-[MVP Walkthrough Video of Plated](https://www.loom.com/share/03426504f24b464fbf3173efa2a3dc09)
+[MVP Walkthrough Video of Plated](https://www.loom.com/share/bcf31a33b6c24587a24ca8040b7f6d3a)
 
 <em>Recipes:</em>
 - Add a new recipe
@@ -38,7 +38,7 @@ Plated eases the burden of the all too common question of "What's for dinner?" w
     - When a recipe has not been assigned to a day, an "Add" button renders in the center.
     - When a recipe has been assigned to a day, the snippet view of a recipe will render with a "Change Dinner" button and a "Clear Dinner" button.
 - "Change Dinner" button brings the dinner form back with previous selection rendering ready to be changed to another meal.
-- "Clear Dinner" button deletes the dinner entry, but not the recipe that was there. Once dinner entry is cleared, the day of the week card reverts back to an "Add" button in the center.
+- "Clear Dinner" button deletes the dinner entry, but NOT the recipe that was there. Once dinner entry is cleared, the day of the week card reverts back to an "Add" button in the center.
 - "Clear the Week's Dinners" above the calendar of the week works like the "Clear Dinner" button except instead of clearing just one dinner entry, clicking this button will clear all dinner entries for the week. Great feature when it's time to sit down and plan the upcoming week's dinners.
 
 <em>General:</em>
