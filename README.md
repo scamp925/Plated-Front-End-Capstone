@@ -1,16 +1,18 @@
 # Plated
 
+![plated](https://user-images.githubusercontent.com/98675776/189264541-3c4b2291-8177-4b83-9721-4f1f9705a794.png)
+
 [See Live Demo of Plated](https://sariah-campopiano-plated.netlify.app/)
 
-[Walkthrough Video of Plated](https://www.loom.com/share/03426504f24b464fbf3173efa2a3dc09)
+[Walkthrough Video of Plated](https://www.loom.com/share/2868a23b2eb94b2d90eb0848649a7844)
 
-![plated](https://user-images.githubusercontent.com/98675776/189264541-3c4b2291-8177-4b83-9721-4f1f9705a794.png)
+[MVP Walkthrough Video of Plated](https://www.loom.com/share/bcf31a33b6c24587a24ca8040b7f6d3a)
 
 ## Topics
 - [So, What Is Plated?](#so-what-is-plated)
 - [MVP Features](#mvp-features)
 - [Stretch Features](#stretch-features)
-- [Try Plated Out For Yourself](#get-started)
+- [Try Plated Out For Yourself](#try-plated-out-for-yourself)
 - [My Learning Corner](#learning-corner)
 - [Planning for Plated](#planning-for-plated)
 - [Tech Stacks for Plated](#tech-stacks)
@@ -61,8 +63,6 @@ vs
 
 <em>CRUD on Going Out to Eat Meal Cards</em>
 
-![create-and-read-going-out-plated](https://user-images.githubusercontent.com/98675776/191652981-1f1e17e7-cebd-4bc0-92a9-8daa6f00dd81.gif)
-
 Create:
 - New Navbar option called "Add a Going Out Meal" for Plated users to click to access the form for going out.
 - Going out form asking if the Plated user will be eating at a restaurant or someone's house and user will choose.
@@ -72,7 +72,7 @@ Read:
 - New going out to eat card renders on "Your Meals" page along with all recipes and other going out to eat cards associate with the authenticated Plated user.
 - Any going out to eat cards will render on user's dinner calendar if selected for a specific day's dinner plans.
 
-![update-going-out-plated](https://user-images.githubusercontent.com/98675776/191653635-7ade48bc-6378-4c86-a532-6e740672e7df.gif)
+![create-and-read-going-out-plated](https://user-images.githubusercontent.com/98675776/191652981-1f1e17e7-cebd-4bc0-92a9-8daa6f00dd81.gif)
 
 Update:
 - An edit button renders on the going out cards for user to edit the existing card.
@@ -80,14 +80,38 @@ Update:
 - Once edit button is clicked, the going out to eat form renders again, but this time with the previous inputs from the user to update.
 - User is able to click the update button on the form then see their updated going out to eat card wherever it is rendering.
 
-![delete-going-out-plated](https://user-images.githubusercontent.com/98675776/191654222-30a11efd-03a4-4fad-8ff8-2068a10325e6.gif)
+![update-going-out-plated](https://user-images.githubusercontent.com/98675776/191653635-7ade48bc-6378-4c86-a532-6e740672e7df.gif)
 
 Delete:
 - Plated users can delete individual going out to eat cards by a click of a button.
   - Note how a going out to eat cards rendering on the dinner calendar do NOT render the delete button, but the delete button is on the cards when they render on the "Your Meals" page for UX/UI purposes.
 - Once going out to eat card is deleted, it will no longer render anywhere on Plated including the dinner calendar if it was previously selected for a dinner.
 
-## Get Started
+![delete-going-out-plated](https://user-images.githubusercontent.com/98675776/191654222-30a11efd-03a4-4fad-8ff8-2068a10325e6.gif)
+
+## Try Plated Out For Yourself
+1. Create a [Firebase](https://firebase.google.com/) project and set up authentication
+
+2. Clone Plated to your local server
+``` bash
+git@github.com:scamp925/Plated-Front-End-Capstone.git
+```
+3. Once in Plated's code, create a .env file at the root of the project
+4. Copy the environmental variables from Firebase and Paste them as the properties of the keys found in your newly created .env file
+5. Import sample data found in data folder in Plated to Realtime Database in your Firebase project
+6. Be in the root directory and from your command line, run
+``` bash
+npm install or npm i
+```
+7. Now from your command line, run
+``` bash
+npm run prepare
+```
+8. To start Plated, run
+``` bash
+npm run dev
+```
+9. Open http://localhost:3000 with your browser.
 ## Planning for Plated
 
 #### ERD for Plated's MVP
