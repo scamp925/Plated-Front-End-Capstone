@@ -89,7 +89,7 @@ Delete:
 ![delete-going-out-plated](https://user-images.githubusercontent.com/98675776/191654222-30a11efd-03a4-4fad-8ff8-2068a10325e6.gif)
 
 ## Try Plated Out For Yourself
-1. Clone Plated to your local server
+1. Clone Plated to your local machine
 ``` bash
 git@github.com:scamp925/Plated-Front-End-Capstone.git
 ```
