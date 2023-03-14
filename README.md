@@ -89,16 +89,27 @@ Delete:
 ![delete-going-out-plated](https://user-images.githubusercontent.com/98675776/191654222-30a11efd-03a4-4fad-8ff8-2068a10325e6.gif)
 
 ## Try Plated Out For Yourself
-1. Create a [Firebase](https://firebase.google.com/) project and set up authentication
-
-2. Clone Plated to your local server
+1. Clone Plated to your local server
 ``` bash
 git@github.com:scamp925/Plated-Front-End-Capstone.git
 ```
-3. Once in Plated's code, create a .env file at the root of the project
-4. Copy the environmental variables from Firebase and Paste them as the properties of the keys found in your newly created .env file
+
+2. Set up a [Firebase](https://firebase.google.com/) project - Here's how: [Firebase Instructions](/Firebase.md)
+
+3. Once in Plated's code, create a .env file at the root of the project and paste the following keys into the .env file:
+``` bash
+NEXT_PUBLIC_FIREBASE_API_KEY=""
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=""
+NEXT_PUBLIC_FIREBASE_DATABASE_URL=""
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=""
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=""
+NEXT_PUBLIC_FIREBASE_APP_ID=""
+```
+4. Copy the environmental variables from Firebase and paste them as the properties of the keys found in your newly created .env file
 5. Import sample data found in data folder in Plated to Realtime Database in your Firebase project
+
 ![finding-sample-data](https://user-images.githubusercontent.com/98675776/191889055-468ebbbd-3143-4362-8adf-99668352d15c.png)
+
 6. Be in the root directory and from your command line, run
 ``` bash
 npm install or npm i
