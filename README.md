@@ -94,7 +94,10 @@ Delete:
 git@github.com:scamp925/Plated-Front-End-Capstone.git
 ```
 
-2. Set up a [Firebase](https://firebase.google.com/) project - Here's how: [Firebase Instructions](/Firebase.md)
+2. Move into directory
+``` bash
+cd Plated-Front-End-Capstone
+```
 
 3. Once in Plated's code, create a .env file at the root of the project and paste the following keys into the .env file:
 ``` bash
@@ -105,24 +108,28 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID=""
 NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=""
 NEXT_PUBLIC_FIREBASE_APP_ID=""
 ```
-4. Copy the environmental variables from Firebase and paste them as the properties of the keys found in your newly created .env file
-5. Import sample data found in data folder in Plated to Realtime Database in your Firebase project
+
+4. Set up a [Firebase](https://firebase.google.com/) project - Here's how: [Firebase Instructions](/Firebase.md)
+
+5. Copy the environmental variables from Firebase and paste them as the properties of the keys found in your newly created .env file
+
+6. Import sample data found in data folder in Plated to Realtime Database in your Firebase project
 
 ![finding-sample-data](https://user-images.githubusercontent.com/98675776/191889055-468ebbbd-3143-4362-8adf-99668352d15c.png)
 
-6. Be in the root directory and from your command line, run
+7. Be in the root directory and from your command line, run
 ``` bash
 npm install or npm i
 ```
-7. Now from your command line, run
+8. Now from your command line, run
 ``` bash
 npm run prepare
 ```
-8. To start Plated, run
+9. To start Plated, run
 ``` bash
 npm run dev
 ```
-9. Open http://localhost:3000 with your browser and enjoy Plated!
+10. Open http://localhost:3000 with your browser and enjoy Plated!
 ## Planning for Plated
 
 #### ERD for Plated's MVP
