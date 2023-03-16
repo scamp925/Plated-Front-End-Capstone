@@ -21,6 +21,8 @@ Plated is where a recipe book meets a meal planner. Individual users are able to
 
 Plated eases the burden of the all too common question of "What's for dinner?" with it's intuitive design for users wanting to plan all of their dinners for the week. Plated users pick their meals from their own recipes; thus, giving all Plated users a peace of mind knowing that dinner will be something they actually like. Plus, having all user's recipes in one place will help users remember what exactly they can make! Thanks to Plated, meal planning is made easy, so users can keep living their lives without the constant stress of trying to figure out what tonight's dinner will be. If this sounds good to you, Plated is what you have been looking for. Happy meal planning!
 
+[Back to List of Topics](#topics)
+
 ### MVP Features
 
 [MVP Walkthrough Video of Plated](https://www.loom.com/share/bcf31a33b6c24587a24ca8040b7f6d3a)
@@ -44,6 +46,8 @@ Plated eases the burden of the all too common question of "What's for dinner?" w
 
 <em>General:</em>
 - All Plated users are authenticated at sign-in thanks to Google Firebase, so everything done by a user on Plated will never change anything on another user's view/account.
+
+[Back to List of Topics](#topics)
 
 ### Stretch Features
 
@@ -87,6 +91,8 @@ Delete:
 - Once going out to eat card is deleted, it will no longer render anywhere on Plated including the dinner calendar if it was previously selected for a dinner.
 
 ![delete-going-out-plated](https://user-images.githubusercontent.com/98675776/191654222-30a11efd-03a4-4fad-8ff8-2068a10325e6.gif)
+
+[Back to List of Topics](#topics)
 
 ## Try Plated Out For Yourself
 
@@ -133,6 +139,8 @@ npm run dev
 9. Click http://localhost:3000 in the terminal to open the browser
 
 10. Enjoy Plated!
+
+[Back to List of Topics](#topics)
 ## Planning for Plated
 
 #### ERD for Plated's MVP
@@ -145,6 +153,8 @@ npm run dev
 
 [Link to Github tickets for Plated - MVP](https://github.com/scamp925/Plated-Front-End-Capstone/issues?page=1&q=is%3Aissue+is%3Aclosed)
 
+[Back to List of Topics](#topics)
+
 ## Tech Stacks
 <div align="center">  
 <a href="https://reactjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="50" /></a>  
@@ -155,3 +165,5 @@ npm run dev
 <a href="https://getbootstrap.com/docs/3.4/javascript/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/bootstrap-plain.svg" alt="Bootstrap" height="50" /></a>  
 <a href="https://www.figma.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/figma-icon.svg" alt="Figma" height="50" /></a>  
 </div>
+
+[Back to List of Topics](#topics)
