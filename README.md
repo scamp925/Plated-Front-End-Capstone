@@ -89,7 +89,10 @@ Delete:
 ![delete-going-out-plated](https://user-images.githubusercontent.com/98675776/191654222-30a11efd-03a4-4fad-8ff8-2068a10325e6.gif)
 
 ## Try Plated Out For Yourself
-1. Clone Plated to your local machine
+
+1. Set up a [Firebase](https://firebase.google.com/) project - Here's how: [Firebase Setup & Authentication](https://www.loom.com/share/163ffe1539bb482196efa713ed6231e9)
+
+2. Clone Plated to your local machine
 ``` bash
 git@github.com:scamp925/Plated-Front-End-Capstone.git
 ```
@@ -109,27 +112,27 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=""
 NEXT_PUBLIC_FIREBASE_APP_ID=""
 ```
 
-4. Set up a [Firebase](https://firebase.google.com/) project - Here's how: [Firebase Instructions](/Firebase.md)
+4. The last portion of the Firebase walkthrough from step 1 highlights where to find the values to put in the empty strings in the code snippet of step 4. From Firebase, copy the values and paste them into the empty strings of the respective keys located in the .env file.
 
-5. Copy the environmental variables from Firebase and paste them as the properties of the keys found in your newly created .env file
-
-6. Import sample data found in data folder in Plated to Realtime Database in your Firebase project
+5. Import sample data found in data folder in Plated to Realtime Database in your Firebase project (OPTIONAL)
 
 ![finding-sample-data](https://user-images.githubusercontent.com/98675776/191889055-468ebbbd-3143-4362-8adf-99668352d15c.png)
 
-7. Be in the root directory and from your command line, run
+6. Be in the root directory and from your command line, run
 ``` bash
 npm install or npm i
 ```
-8. Now from your command line, run
+7. Now from your command line, run
 ``` bash
 npm run prepare
 ```
-9. To start Plated, run
+8. To start Plated, run
 ``` bash
 npm run dev
 ```
-10. Open http://localhost:3000 with your browser and enjoy Plated!
+9. Click http://localhost:3000 in the terminal to open the browser
+
+10. Enjoy Plated!
 ## Planning for Plated
 
 #### ERD for Plated's MVP
